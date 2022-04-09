@@ -24,7 +24,7 @@
         <p class="cart__total__text">{{ cartSum }} ₸</p>
       </div>
       <div class="cart__buttons pl__pr">
-        <a href="/cart" class="cart__src">Перейти в корзину</a>
+        <router-link to="cart"><a class="cart__src">Перейти в корзину</a></router-link>
         <button
           class="cart__button"
           data-toggle="modal"

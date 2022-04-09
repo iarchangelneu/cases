@@ -19,10 +19,10 @@
       </div>
       <div class="stock__images">
         <div class="stock__left2">
-          <img src="../assets/img/2sl.png" alt="" style="width: 37.50vw" />
+          <img src="../assets/img/2sl.png" alt="" style="width: 37.5vw" />
         </div>
         <div class="slct">
-          <img src="@/assets/img/2slct.png" alt="" style="width:54.69vw">
+          <img src="@/assets/img/2slct.png" alt="" style="width: 54.69vw" />
         </div>
         <div class="stock__right2">
           <img src="../assets/img/2sltext.png" alt="" style="width: 33.65vw" />
@@ -34,101 +34,91 @@
       </div>
     </div>
   </div>
-  <div class="cases row">
-    <div class="cases__content col-12 col-md-6">
-      <img
-        src="@/assets/img/textleft.png"
-        style="width: 34.84vw; margin-left: 7.57vw"
-      />
-      <div class="cases__popular">
-        <div class="cases__popular__content">
-          <div style="margin-right: 3.59vw">
-            <img
-              src="../assets/img/glhf.png"
-              alt=""
-              style="width: 15.63vw"
-            />
-            <p class="cases__desc">GL HF</p>
-            <p class="cases__price">145 ₸</p>
+  <div class="container-fluid">
+    <div class="cases row">
+      <div class="cases__content col-12 col-md-6">
+        <img
+          src="@/assets/img/textleft.png"
+          style="width: 34.84vw; margin-left: 7.57vw"
+        />
+        <div class="cases__popular">
+          <div class="cases__popular__content">
+            <div style="margin-right: 3.59vw">
+              <img src="../assets/img/glhf.png" alt="" style="width: 15.63vw" />
+              <p class="cases__desc">GL HF</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
+            <div>
+              <img src="../assets/img/hs.png" alt="" style="width: 15.63vw" />
+              <p class="cases__desc">Head Shot</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
           </div>
-          <div>
-            <img
-              src="../assets/img/hs.png"
-              alt=""
-              style="width: 15.63vw"
-            />
-            <p class="cases__desc">Head Shot</p>
-            <p class="cases__price">145 ₸</p>
+          <div class="cases__popular__content">
+            <div style="margin-right: 3.59vw">
+              <img src="../assets/img/ez.png" alt="" style="width: 15.63vw" />
+              <p class="cases__desc">EZ case</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
+            <div>
+              <img
+                src="../assets/img/spring.png"
+                alt=""
+                style="width: 15.63vw"
+              />
+              <p class="cases__desc">Весенний</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
           </div>
-        </div>
-        <div class="cases__popular__content">
-          <div style="margin-right: 3.59vw">
-            <img
-              src="../assets/img/ez.png"
-              alt=""
-              style="width: 15.63vw"
-            />
-            <p class="cases__desc">EZ case</p>
-            <p class="cases__price">145 ₸</p>
-          </div>
-          <div>
-            <img
-              src="../assets/img/spring.png"
-              alt=""
-              style="width: 15.63vw"
-            />
-            <p class="cases__desc">Весенний</p>
-            <p class="cases__price">145 ₸</p>
-          </div>
-        </div>
-        <div class="cases__popular__content">
-          <div>
-            <img
-              src="../assets/img/violet.png"
-              alt=""
-              style="width: 15.63vw"
-            />
-            <p class="cases__desc">Ультрафиолет</p>
-            <p class="cases__price">145 ₸</p>
+          <div class="cases__popular__content">
+            <div>
+              <img
+                src="../assets/img/violet.png"
+                alt=""
+                style="width: 15.63vw"
+              />
+              <p class="cases__desc">Ультрафиолет</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="cases__content col-12 col-md-6">
-      <img
-        src="@/assets/img/textright.png"
-        style="width: 41.41vw; margin-left: 3.17vw"
-      />
-      <div class="cases__popular cases_p">
-        <div class="cases__popular__content">
-          <div style="margin-right: 3.59vw">
-            <img src="../assets/img/revo.png" alt="" style="width: 15.63vw" />
-            <p class="cases__desc">REVOLVER R8</p>
-            <p class="cases__price">145 ₸</p>
+      <div class="cases__content col-12 col-md-6" style="overflow-x: hidden">
+        <img
+          src="@/assets/img/textright.png"
+          style="width: 41.41vw; margin-left: 3.17vw"
+        />
+        <div class="cases__popular cases_p">
+          <div class="cases__popular__content">
+            <div style="margin-right: 3.59vw">
+              <img src="../assets/img/revo.png" alt="" style="width: 15.63vw" />
+              <p class="cases__desc">REVOLVER R8</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
+            <div>
+              <img src="../assets/img/de.png" alt="" style="width: 15.63vw" />
+              <p class="cases__desc">DESERT EAGLE</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
           </div>
-          <div>
-            <img src="../assets/img/de.png" alt="" style="width: 15.63vw" />
-            <p class="cases__desc">DESERT EAGLE</p>
-            <p class="cases__price">145 ₸</p>
+          <div class="cases__popular__content">
+            <div style="margin-right: 3.59vw">
+              <img src="../assets/img/ak.png" alt="" style="width: 15.63vw" />
+              <p class="cases__desc">AK-47</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
+            <div>
+              <img src="../assets/img/mac.png" alt="" style="width: 15.63vw" />
+              <p class="cases__desc">MAC-10</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
           </div>
-        </div>
-        <div class="cases__popular__content">
-          <div style="margin-right: 3.59vw">
-            <img src="../assets/img/ak.png" alt="" style="width: 15.63vw" />
-            <p class="cases__desc">AK-47</p>
-            <p class="cases__price">145 ₸</p>
-          </div>
-          <div>
-            <img src="../assets/img/mac.png" alt="" style="width: 15.63vw" />
-            <p class="cases__desc">MAC-10</p>
-            <p class="cases__price">145 ₸</p>
-          </div>
-        </div>
-        <div class="cases__popular__content">
-          <div>
-            <img src="../assets/img/m4.png" alt="" style="width: 15.63vw" />
-            <p class="cases__desc">M4A4</p>
-            <p class="cases__price">145 ₸</p>
+          <div class="cases__popular__content">
+            <div>
+              <img src="../assets/img/m4.png" alt="" style="width: 15.63vw" />
+              <p class="cases__desc">M4A4</p>
+              <p class="cases__price">145 ₸</p>
+            </div>
           </div>
         </div>
       </div>
@@ -171,7 +161,7 @@ export default {
 };
 </script>
 <style scoped>
-.slct{
+.slct {
   position: absolute;
   left: 45%;
   bottom: 0;
@@ -241,10 +231,10 @@ export default {
   margin-left: 5vw;
   padding-bottom: 5.21vw;
 }
-.stock__button2{
- padding-bottom: 5.21vw;
+.stock__button2 {
+  padding-bottom: 5.21vw;
 }
-.stock__desc22{
+.stock__desc22 {
   font-weight: 700;
   font-size: 2.08vw;
   color: #fff;
@@ -260,11 +250,11 @@ export default {
   margin-top: 21.41vw;
   margin-left: 4.48vw;
 }
-.stock__left2{
-   margin-top: 4.53vw;
+.stock__left2 {
+  margin-top: 4.53vw;
   margin-left: 4.48vw;
 }
-.stock__right2{
+.stock__right2 {
   margin-top: 11.04vw;
 }
 .stock__images {

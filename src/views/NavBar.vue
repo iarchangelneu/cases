@@ -1,9 +1,9 @@
 <template>
   <div class="navbar">
-      <a href="/" :class="['navbar__btn', {'active': currentPage == '/'}]">Главная</a>
+      <router-link to="/"><a :class="['navbar__btn', {'active': currentPage == '/'}]">Главная</a></router-link>
       <a href="#FAQ" :class="['navbar__btn']">FAQ</a>
-      <a href="/shop" :class="['navbar__btn', {'active': currentPage == '/shop'}]">Магазин</a>
-      <a href="/cases" :class="['navbar__btn', {'active': currentPage == '/cases'}]">Кейсы</a>
+      <router-link to="shop"><a :class="['navbar__btn', {'active': currentPage == '/shop'}]">Магазин</a></router-link>
+      <router-link to="cases"><a :class="['navbar__btn', {'active': currentPage == '/cases'}]">Кейсы</a></router-link>
     </div>
 </template>
 
