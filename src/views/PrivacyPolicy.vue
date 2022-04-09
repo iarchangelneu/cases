@@ -104,15 +104,14 @@ export default {
     padding-right: 2.6vw; 
 }
 .stock__text {
-    text-shadow: 5px 4px 30px #561f8c, 2px 4px 4px #561f8c;
-    color: #f7f7f7;
+    color: #C62C44;
     font-weight: 800;
     font-size: 2.7vw;
     text-align: center;
 }
 hr {
   border: 3px solid #ffffff;
-  box-shadow: 0px 2px 4px #9028f6;
+  box-shadow: 0px 2px 4px #C62C44;
   filter: blur(1px);
   width: 10.68vw;
   text-align: center;
