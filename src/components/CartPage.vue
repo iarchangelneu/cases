@@ -62,8 +62,8 @@ export default {
 
 <style scoped>
 .buy__btn {
-  background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
-  border-radius: 0.63vw;
+  background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
+  border-radius: 1.56vw;
   padding: 0.68vw 0.83vw 0.68vw 0.83vw;
   font-weight: 700;
   font-size: 1.88vw;

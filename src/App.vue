@@ -39,7 +39,7 @@
     <template #footer>
       <div class="modal__btn">
         <button class="modal__button">
-          <a class="modal__href" @click=" openSignIn()">Войти</a>
+          <a class="modal__href" @click="openSignIn()">Войти</a>
         </button>
       </div>
     </template>
@@ -81,7 +81,7 @@
             <img
               src="./assets/img/steamlog.svg"
               alt=""
-              style="width: 3.39vw; margin-right:0.52vw;"
+              style="width: 3.39vw; margin-right: 0.52vw"
             />Войти через Steam
           </button>
           <a class="haveacc__href" @click="openReg()">Зарегистрироваться</a>
@@ -91,7 +91,7 @@
   </log-reg>
 
   <reg-modal>
-     <template #header>
+    <template #header>
       <div class="logreg__main">Регистрация</div>
     </template>
     <template #body>
@@ -113,7 +113,9 @@
           class="modal__input"
           placeholder="Введите пароль"
         />
-        <label for="repeat-password" class="modal__label">Повторите пароль</label><br />
+        <label for="repeat-password" class="modal__label"
+          >Повторите пароль</label
+        ><br />
         <input
           type="password"
           name="repeat-password"
@@ -126,85 +128,78 @@
     <template #footer>
       <div class="modal__haveacc">
         <div class="haveacc__btn2">
-          <button class="haveacc__button" style="margin-right:4.90vw">
-           Зарегистрироваться
+          <button class="haveacc__button" style="margin-right: 4.9vw">
+            Зарегистрироваться
           </button>
           <button class="haveacc__button">
             <img
               src="./assets/img/steamlog.svg"
               alt=""
-              style="width: 3.39vw; margin-right:0.52vw;"
+              style="width: 3.39vw; margin-right: 0.52vw"
             />Войти через Steam
           </button>
-          
         </div>
       </div>
     </template>
   </reg-modal>
 
-  <money-modal>
-  </money-modal>
+  <money-modal> </money-modal>
 
-  <output-modal>
-  </output-modal>
+  <output-modal> </output-modal>
 
   <payment-error>
-      <template #header>
-        <div class="modal__header">
-          <img src="./assets/img/signin.svg" alt="" style="width: 6.25vw" />
-        </div>
-      </template>
-      <template #body>
-        <div class="modal__body">
-          <p class="modal__text">Упс...</p>
-          <p class="modal__text">
-            Попробуйте другую платежную систему
-          </p>
-        </div>
-      </template>
-      <template #footer>
-        <div class="modal__btn">
-          <button class="modal__button" @click="closeError()">
-           Понятно
-          </button>
-        </div>
-      </template>
+    <template #header>
+      <div class="modal__header">
+        <img src="./assets/img/signin.svg" alt="" style="width: 6.25vw" />
+      </div>
+    </template>
+    <template #body>
+      <div class="modal__body">
+        <p class="modal__text">Упс...</p>
+        <p class="modal__text">Попробуйте другую платежную систему</p>
+      </div>
+    </template>
+    <template #footer>
+      <div class="modal__btn">
+        <button class="modal__button" @click="closeError()">Понятно</button>
+      </div>
+    </template>
   </payment-error>
 </template>
 <script>
-$(document).on('hidden.bs.modal', function (event) {
-    if ($('.modal:visible').length) {
-      $('body').addClass('modal-open');
-    }
-  });
-export default {
-  methods:{
-    openReg(){
-      $('#LogReg').modal('hide')
-      $('#Reg').modal('show')
-    },
-    closeError(){
-          $('#PaymentError').modal('hide')
-      },
-    openTopUp(){
-      $('#exampleModal').modal('hide')
-      $('#Money').modal('show')
-    },
-    openSignIn(){
-      $('#exampleModal').modal('hide')
-      $('#LogReg').modal('show')
-    }
+$(document).on("hidden.bs.modal", function (event) {
+  if ($(".modal:visible").length) {
+    $("body").addClass("modal-open");
   }
-}
+});
+export default {
+  methods: {
+    openReg() {
+      $("#LogReg").modal("hide");
+      $("#Reg").modal("show");
+    },
+    closeError() {
+      $("#PaymentError").modal("hide");
+    },
+    openTopUp() {
+      $("#exampleModal").modal("hide");
+      $("#Money").modal("show");
+    },
+    openSignIn() {
+      $("#exampleModal").modal("hide");
+      $("#LogReg").modal("show");
+    },
+  },
+};
 </script>
 <style scoped>
-.haveacc__btn{
+.haveacc__btn {
   display: flex;
   justify-content: space-around;
   margin-bottom: 2.71vw;
 }
-.haveacc__btn2{
-  margin-top:1.98vw;
+.haveacc__btn2 {
+  margin-top: 1.98vw;
   display: flex;
   justify-content: center;
   margin-bottom: 2.71vw;
@@ -213,12 +208,12 @@ export default {
   display: flex;
   font-weight: 600;
   font-size: 1.35vw;
-  color: #f7f7f7;
-  background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
-  border: 1px solid #000000;
   box-sizing: border-box;
-  border-radius: 0.63vw;
+  background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
+  border-radius: 1.56vw;
   align-items: center;
+  color:#fff;
+  border: 0;
 }
 .haveacc__href {
   cursor: pointer;
@@ -247,8 +242,8 @@ export default {
   padding-left: 50px;
 }
 .modal__input {
-  background: #1e1c2a;
-  border-radius: 2.60vw;
+  background: #171717;
+  border-radius: 2.6vw;
   width: 40.63vw;
   height: 3.39vw !important;
   border: 0;
@@ -287,8 +282,8 @@ export default {
   text-decoration: none;
 }
 .modal__button {
-  background: linear-gradient(83.8deg, #C62C44 15.62%, #FF0027 91.62%);
-  border-radius: 1.56vw;
+  background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
+  border-radius: 30px;
   padding: 0.78vw 2.4vw 0.78vw 2.4vw;
   border: 0;
   font-weight: 700;
@@ -315,34 +310,37 @@ export default {
   text-align: center;
   color: #fff;
 }
-@media screen and (max-width: 480px){
-  .modal__text{
+@media screen and (max-width: 480px) {
+  .modal__text {
     font-size: 3.5vw !important;
   }
-  .modal__button{
+  .modal__button {
     font-size: 2.4vw !important;
   }
-  .modal__header{
+  .modal__header {
     padding-left: 38.79vw !important;
   }
-  .modal__header img{
+  .modal__header img {
     width: 16.25vw !important;
   }
-  .logreg__main{
+  .logreg__main {
     font-size: 3.5vw !important;
   }
-  .modal__label{
-    font-size:3.2vw !important;
+  .modal__label {
+    font-size: 3.2vw !important;
   }
-  .modal__input{
+  .modal__input {
     height: 3.9vw !important;
     font-size: 2.5vw !important;
-    width:62.62vw !important;
+    width: 62.62vw !important;
   }
-  .modal__signin, .haveacc__button, .haveacc__href, .haveacc__main{
+  .modal__signin,
+  .haveacc__button,
+  .haveacc__href,
+  .haveacc__main {
     font-size: 2.5vw !important;
   }
-  .haveacc__button img{
+  .haveacc__button img {
     width: 5.39vw !important;
   }
 }

@@ -19,7 +19,7 @@
           <p class="name">IlyuhaTopCSer</p>
           <div class="dropdown-content">
             <a href="/account">Профиль</a>
-            <a href="#">Выйти</a>
+            <a @click="IsLoggedIn = false">Выйти</a>
           </div>
         </div>
         <button class="cart__btn" @click="openHeader()">
@@ -157,8 +157,8 @@ export default {
 }
 .signin {
   border: 0;
-  background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
-  border-radius: 0.63vw;
+ background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
+  border-radius: 1.56vw;
   color: #fff;
   font-weight: 700;
   font-size: 1.35vw;
@@ -169,8 +169,8 @@ export default {
 .signin__steam {
   display: flex;
   align-items: center;
-  background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
-  border-radius: 0.63vw;
+  background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
+  border-radius: 1.56vw;
   border: 0;
   padding: 1.04vw 1.25vw 0.42vw 0.52vw;
   height: 3.54vw;
