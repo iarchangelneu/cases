@@ -8,7 +8,12 @@
       @deleteCart="deleteCart(i)"
     >
       <div class="product__content">
-        <img :src="item.img" alt="" style="width: 16.46vw" />
+        <img
+          :src="item.img"
+          alt=""
+          style="width: 16.46vw"
+          class="product__img"
+        />
         <div class="product__desc">
           <p class="product__name">{{ item.name }} {{ item.collection }}</p>
           <p class="product__text">{{ item.rarity }}</p>
@@ -61,6 +66,11 @@ export default {
 </script>
 
 <style scoped>
+.product__img {
+  background: rgba(48, 47, 56, 0.5);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0.99vw;
+}
 .buy__btn {
   background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
   border-radius: 0.63vw;
@@ -138,7 +148,7 @@ export default {
 .product__content {
   position: relative;
   display: flex;
-  background: #36353c;
+  background: transparent;
   border-radius: 5px;
   align-items: center;
   justify-content: space-around;

@@ -22,7 +22,7 @@ import OutputModal from './views/OutputModal'
 const Mixin = {
     data(){
         return{
-            IsLoggedIn: false,
+            IsLoggedIn: true,
             products: [
                 {
                     img: require("./assets/img/voi__cart.png"),

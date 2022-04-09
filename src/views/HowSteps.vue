@@ -5,56 +5,62 @@
         <div class="how__padding">
           <p class="how__main">Как это работает?</p>
           <div class="how__images">
-            <div class="how__steps">
-              <img
-                src="../assets/img/step1.png"
-                alt=""
-                style="width: 18.13vw"
-              />
-              <p class="how__text" style="width: 12.92vw; margin-left: -2.34vw">
-                Войдите через Steam и привяжите аккаунт
-              </p>
+            <div class="chel">
+              <img src="@/assets/img/chel.png" alt="" style="width:91.04vw;"/>
             </div>
-            <div class="how__steps">
-              <img
-                src="../assets/img/step2.png"
-                alt=""
-                style="width: 18.13vw"
-              />
-              <p class="how__text" style="width: 8.02vw; margin-left: 0.26vw">
-                Введите свою Trade-ссылку
-              </p>
+            <div class="how__flex" style="margin-left:29.74vw">
+              <div class="how__steps">
+                <img
+                  src="../assets/img/step1.png"
+                  alt=""
+                  style="width: 8.13vw"
+                />
+                <p class="how__text" style="width:12.92vw; margin-left:-2vw">
+                  Войдите через Steam и привяжите аккаунт
+                </p>
+              </div>
+              <div class="how__steps">
+                <img
+                  src="../assets/img/step2.png"
+                  alt=""
+                  style="width: 8.13vw"
+                />
+                <p class="how__text" style="width:13.13vw; margin-left:-2.2vw">
+                  Пополните счет удобным Вам способом
+                </p>
+              </div>
+              <div class="how__steps">
+                <img
+                  src="../assets/img/step3.png"
+                  alt=""
+                  style="width: 8.13vw"
+                />
+                <p class="how__text" style="15.31vw; margin-left:-2.5vw">
+                 Выводите скины в Steam<br> или продайте<br> и играйте дальше!
+                </p>
+              </div>
             </div>
-            <div class="how__steps">
-              <img
-                src="../assets/img/step3.png"
-                alt=""
-                style="width: 18.13vw"
-              />
-              <p class="how__text" style="width: 13.13vw; margin-left: -2.34vw">
-                Пополните счет удобным Вам способом
-              </p>
-            </div>
-            <div class="how__steps">
-              <img
-                src="../assets/img/step4.png"
-                alt=""
-                style="width: 18.13vw"
-              />
-              <p class="how__text" style="width: 12.03vw; margin-left: -1.56vw">
-                Открывайте кейсы по выгодным ценам!
-              </p>
-            </div>
-            <div class="how__steps">
-              <img
-                src="../assets/img/step5.png"
-                alt=""
-                style="width: 8.13vw; margin-right: 3.8vw"
-              />
-              <p class="how__text" style="width: 15.31vw; margin-left: -3.39vw">
-                Выводите скины на свой аккаунт в Steam или продайте и играйте
-                дальше!
-              </p>
+            <div class="how__flex" style="margin-left:39.28vw">
+              <div class="how__steps">
+                <img
+                  src="../assets/img/step4.png"
+                  alt=""
+                  style="width: 8.13vw"
+                />
+                <p class="how__text" >
+                 Введите свою<br> Trade-ссылку
+                </p>
+              </div>
+              <div class="how__steps" style="margin-right:10.98vw">
+                <img
+                  src="../assets/img/step5.png"
+                  alt=""
+                  style="width: 8.13vw"
+                />
+                <p class="how__text" style="margin-left:-1.5vw">
+                  Открывайте кейсы по<br> выгодным ценам!
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -64,15 +70,24 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
+.how__flex {
+  display: flex;
+  justify-content: space-between;
+}
+.how__faq {
+  margin-left: -2.08vw;
+}
 .pl__pr {
-  margin-left: 2.86vw;
-  margin-right: 2.86vw;
+  margin-right: 3.46vw;
+}
+.chel {
+  left: 0;
+  bottom: 0;
+  position: absolute;
 }
 .how__text {
   font-weight: 400;
@@ -82,38 +97,40 @@ export default {
   margin-top: 0.94vw;
 }
 .how__images {
-  display: flex;
+  margin-top: -2vw;
 }
 .how__padding {
   padding-left: 6.46vw;
   padding-right: 6.46vw;
-  padding-top:1.15vw;
+  padding-top: 1.15vw;
   padding-bottom: 4.32vw;
 }
 .how__main {
   font-weight: 800;
   font-size: 2.29vw;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.025em;
   color: #fff;
-  padding-bottom: 3.44vw;
 }
 .how__content {
-  background: #252331;
-  border-radius: 0.78vw;
+  position: relative;
+  background: #281f27;
+  height: 34.74vw;
+  border-top-right-radius: 2.6vw;
+  border-bottom-right-radius: 2.6vw;
 }
-@media screen and (max-width:480px){
+@media screen and (max-width: 480px) {
   /* .how__steps img{
     width: 14vw !important;
   } */
-  .how__text{
+  .how__text {
     font-size: 2.2vw;
   }
-  .how__main{
+  .how__main {
     font-size: 3.2vw;
   }
- .how__padding{
-   padding-left: 3.46vw;
- }
+  .how__padding {
+    padding-left: 3.46vw;
+  }
 }
 </style>

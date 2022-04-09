@@ -14,16 +14,14 @@
             alt=""
             style="width: 1.56vw; margin-right: 0.57vw"
           />
-          {{cartSum}} ₸
+          {{ cartSum }} ₸
         </p>
       </div>
-     <CartItemMenu 
-     :cart_data="CART_PLS"
-     ></CartItemMenu>
+      <CartItemMenu :cart_data="CART_PLS"></CartItemMenu>
       <hr style="width: 29.74vw" />
       <div class="cart__total pl__pr">
         <p class="cart__total__text">Итого</p>
-        <p class="cart__total__text">{{cartSum}} ₸</p>
+        <p class="cart__total__text">{{ cartSum }} ₸</p>
       </div>
       <div class="cart__buttons pl__pr">
         <a href="/cart" class="cart__src">Перейти в корзину</a>
@@ -40,19 +38,17 @@
 </template>
 
 <script>
-import CartItemMenu from '../views/CartItemMenu.vue'
-import {mapGetters} from 'vuex'
+import CartItemMenu from "../views/CartItemMenu.vue";
+import { mapGetters } from "vuex";
 
 export default {
   data() {
-    return {
-      
-    };
+    return {};
   },
-  components:{
-    CartItemMenu
+  components: {
+    CartItemMenu,
   },
-  props:{
+  props: {
     cart_item_data: {
       type: Object,
       default() {
@@ -66,20 +62,20 @@ export default {
       sc.style.transition = "all 0.8s";
       sc.style.right = -101 + "vw";
     },
-    deleteCart(){
-      this.$emit('deleteCart')
+    deleteCart() {
+      this.$emit("deleteCart");
     },
   },
-  computed:{
-    ...mapGetters(['CART_PLS']),
-      cartSum(){
-        console.log(this.CART_PLS)
-        return this.CART_PLS.reduce(
-          (previousValue, currentValue) => previousValue + currentValue.price,
-          0
-        )
-      }
-  }
+  computed: {
+    ...mapGetters(["CART_PLS"]),
+    cartSum() {
+      console.log(this.CART_PLS);
+      return this.CART_PLS.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.price,
+        0
+      );
+    },
+  },
 };
 </script>
 
@@ -103,8 +99,8 @@ export default {
   overflow-y: scroll;
 }
 .cart__button {
-  background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
-  border-radius: 0.63vw;
+  background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
+  border-radius: 1.56vw;
   padding: 0.78vw 1.09vw 0.78vw 1.09vw;
   text-transform: uppercase;
   color: #fff;
@@ -151,7 +147,7 @@ hr {
 .product__name {
   font-weight: 600;
   font-size: 1.04vw;
-  color: #7b5acb;
+  color: #F5002A;
 }
 .product__close {
   position: absolute;
@@ -163,7 +159,7 @@ hr {
   margin-bottom: 2.4vw;
 }
 .cart__product {
-  background: #36353c;
+  background: transparent;
   border-radius: 0.26vw;
   display: flex;
   position: relative;
@@ -187,7 +183,7 @@ hr {
   font-weight: 500;
   font-size: 1.46vw;
   color: #f7f7f7;
-  background: #7b5acb;
+  background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
   border-radius: 0.26vw;
   padding: 0.26vw 0.26vw 0.26vw 0.26vw;
   align-items: center;
@@ -205,57 +201,61 @@ hr {
   background-color: white;
   z-index: 1001;
   overflow: auto;
-  background: #1f1f23;
+  background: #281f27;
 }
-
-@media screen and (max-width:480px){
-  .cart{
+.cart__productIMG {
+  background: rgba(48, 47, 56, 0.5);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0.99vw;
+}
+@media screen and (max-width: 480px) {
+  .cart {
     width: 90vw;
   }
-  .cart__productIMG{
+  .cart__productIMG {
     width: 23vw !important;
   }
-  .product__name{
+  .product__name {
     font-size: 14px;
     margin-bottom: 0.5rem;
   }
-  .product__text{
+  .product__text {
     font-size: 12px;
     margin-bottom: 0.5rem;
   }
-  .product__count{
+  .product__count {
     font-size: 12px;
   }
-  .product__close{
+  .product__close {
     left: unset;
     right: 10px;
   }
-  .product__close img{
+  .product__close img {
     width: 5vw !important;
   }
-  .cart__total__text{
+  .cart__total__text {
     font-size: 14px;
   }
-  .cart__src{
+  .cart__src {
     font-size: 14px;
   }
-  .cart__button{
+  .cart__button {
     font-size: 14px;
   }
-  .cart_container{
+  .cart_container {
     padding-bottom: 30px;
   }
-  .test{
+  .test {
     height: 400px;
   }
-  .cart__content img{
+  .cart__content img {
     width: 8vw !important;
   }
-  .cart__summary{
+  .cart__summary {
     font-size: 14px;
     margin-bottom: 0;
   }
-  .cart__summary img{
+  .cart__summary img {
     width: 5vw !important;
   }
 }

@@ -104,7 +104,7 @@ details[open] > summary:before {
   content: "–";
 }
 details[open] > summary {
-  color: #7b5acb;
+  color: #F5002A;
 }
 summary ~ * {
   padding: 0 1em 0 1em;
@@ -114,7 +114,7 @@ summary:focus {
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.3);
 }
 details {
-  background: #252331;
+  background: #281F27;
   border-radius: 0.78vw;
   display: block;
   margin-bottom: 1.56vw;

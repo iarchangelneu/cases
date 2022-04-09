@@ -2,32 +2,32 @@
   <div class="cart__page pl__pr">
     <div class="cart__pagecontent p__content">
       <p class="cart__main">Корзина</p>
-      <cart-item-page
-      :cart_data="CART_PLS"
-      ></cart-item-page>
+      <cart-item-page :cart_data="CART_PLS"></cart-item-page>
       <hr />
       <div class="total">
         <div class="product__summary">
           <p style="margin-right: 7.55vw">Итого</p>
-          <p>{{cartSum}} ₸</p>
+          <p>{{ cartSum }} ₸</p>
         </div>
-        <button
-          class="buy__btn"
-          data-toggle="modal"
-          data-target="#exampleModal"
-        >
-          Перейти к оформлению
-        </button>
+        <div>
+          <button
+            class="buy__btn"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            Перейти к оформлению
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
-import CartItemPage from '../views/CartItemPage.vue'
+import { mapGetters } from "vuex";
+import CartItemPage from "../views/CartItemPage.vue";
 export default {
-  props:{
+  props: {
     cart_item_data: {
       type: Object,
       default() {
@@ -41,22 +41,22 @@ export default {
       productTotal: 1,
     };
   },
-  components:{
-    CartItemPage
+  components: {
+    CartItemPage,
   },
-  computed:{
-    ...mapGetters(['CART_PLS']),
-    cartSum(){
-        console.log(this.CART_PLS)
-        return this.CART_PLS.reduce(
-          (previousValue, currentValue) => previousValue + currentValue.price,
-          0
-        )
-      }
-  },
-  methodsdeleteCart(){
-      this.$emit('deleteCart')
+  computed: {
+    ...mapGetters(["CART_PLS"]),
+    cartSum() {
+      console.log(this.CART_PLS);
+      return this.CART_PLS.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.price,
+        0
+      );
     },
+  },
+  methodsdeleteCart() {
+    this.$emit("deleteCart");
+  },
 };
 </script>
 
@@ -78,7 +78,8 @@ export default {
   justify-content: flex-end;
 }
 .total {
-  text-align: right;
+  display:flex;
+  justify-content: space-between
 }
 .product__overflow::-webkit-scrollbar {
   background: #181820;
@@ -87,7 +88,7 @@ export default {
 }
 .product__overflow::-webkit-scrollbar-thumb {
   border-radius: 0.78vw;
-  background-color: #483e83;
+  background-color: #833e3e;
 }
 .product__overflow::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
@@ -157,7 +158,7 @@ export default {
   margin-bottom: 6.41vw;
 }
 .cart__pagecontent {
-  background: #252331;
+  background: #281f27;
   border-radius: 0.78vw;
 }
 .pl__pr {
@@ -170,18 +171,18 @@ export default {
   padding-left: 5.78vw;
   padding-right: 5.47vw;
 }
-.product__sumbtn img{
+.product__sumbtn img {
   width: 100%;
 }
-@media screen and (max-width:480px){
-  .product__total{
-  font-size: 12px;
-}
-.product__summary{
-  font-size: 16px;
-}
-.buy__btn{
-  font-size: 14px;
-}
+@media screen and (max-width: 480px) {
+  .product__total {
+    font-size: 12px;
+  }
+  .product__summary {
+    font-size: 16px;
+  }
+  .buy__btn {
+    font-size: 14px;
+  }
 }
 </style>

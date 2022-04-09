@@ -287,8 +287,8 @@ export default {
   text-decoration: none;
 }
 .modal__button {
-  background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
-  border-radius: 0.63vw;
+  background: linear-gradient(83.8deg, #C62C44 15.62%, #FF0027 91.62%);
+  border-radius: 1.56vw;
   padding: 0.78vw 2.4vw 0.78vw 2.4vw;
   border: 0;
   font-weight: 700;

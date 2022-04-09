@@ -14,19 +14,9 @@
             <div class="money__type">
               <div class="money__typecontent">
                 <button class="money__btn money__active">
-                  <img
-                    src="../assets/img/user__topup.svg"
-                    alt=""
-                    style="width: 1.98vw; margin-right: 0.68vw"
-                  />
                   Пополнение баланса
                 </button>
-                <button class="money__btn" @click="outPut()">
-                  <img
-                    src="../assets/img/user__output.svg"
-                    alt=""
-                    style="width: 1.98vw; margin-right: 0.68vw"
-                  />
+                <button class="money__btn" @click="outPut()">               
                   Вывод средств
                 </button>
               </div>
@@ -239,39 +229,6 @@ input[type="checkbox"] {
   font-weight: 700;
   font-size: 1.56vw;
   color: #fff;
-}
-.money__active {
-  background: linear-gradient(
-    235.92deg,
-    #753ef9 14.85%,
-    #9d75ff 87.62%
-  ) !important;
-  border-radius: 12px !important;
-  border: 0 !important;
-  color: #fff !important;
-}
-.money__typecontent {
-  display: flex;
-  margin-left: 5.21vw;
-  margin-right: 5.21vw;
-  background: #1e1c2a;
-  border-radius: 0.63vw;
-  padding-left: 3.33vw;
-  padding-top: 1.72vw;
-  padding-bottom: 1.72vw;
-}
-.money__btn {
-  padding-bottom: 0.78vw;
-  display: flex;
-  background: transparent;
-  border: 2px solid #f7f7f7;
-  box-sizing: border-box;
-  border-radius: 0.63vw;
-  font-weight: 700;
-  font-size: 1.35vw;
-  color: #fff;
-  margin-right: 2.24vw;
-  align-items: flex-end;
 }
 .money__type {
 }

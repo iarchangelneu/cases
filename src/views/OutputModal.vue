@@ -14,19 +14,9 @@
             <div class="money__type">
               <div class="money__typecontent">
                 <button class="money__btn" @click="topUp()">
-                  <img
-                    src="../assets/img/user__topup.svg"
-                    alt=""
-                    style="width: 1.98vw; margin-right: 0.68vw"
-                  />
                   Пополнение баланса
                 </button>
                 <button class="money__btn money__active">
-                  <img
-                    src="../assets/img/user__output.svg"
-                    alt=""
-                    style="width: 1.98vw; margin-right: 0.68vw"
-                  />
                   Вывод средств
                 </button>
               </div>
@@ -154,8 +144,8 @@ export default {
   color: #fff;
 }
 .complete__btn {
-  background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
-  border-radius: 0.26vw;
+  background: linear-gradient(83.8deg, #C62C44 15.62%, #FF0027 91.62%);
+border-radius: 1.56vw;
   color: #fff;
   padding: 0.99vw 1.61vw 0.99vw 1.61vw;
   font-weight: 700;
@@ -167,7 +157,7 @@ export default {
 }
 .money__input {
   padding-left: 1.82vw;
-  background: #1e1c2a;
+  background: #171717;
   border: 3px solid rgba(247, 247, 247, 0.6);
   box-sizing: border-box;
   border-radius: 5px;
@@ -217,7 +207,7 @@ input[type="checkbox"] {
   align-items: center;
 }
 .payment__active {
-  border: 3px solid rgba(117, 62, 249, 1);
+  border: 3px solid #C62C44;
 }
 .pay_img {
   width: 100%;
@@ -259,30 +249,27 @@ input[type="checkbox"] {
   color: #fff;
 }
 .money__active {
-  background: linear-gradient(
-    235.92deg,
-    #753ef9 14.85%,
-    #9d75ff 87.62%
-  ) !important;
-  border-radius: 12px !important;
-  border: 0 !important;
-  color: #fff !important;
+  border-bottom: 3px solid #ffffff;
+  box-shadow: 0px 2px 4px #FF0000;
+  width: 23.39vw;
+  text-align: center;
 }
 .money__typecontent {
   display: flex;
   margin-left: 5.21vw;
   margin-right: 5.21vw;
-  background: #1e1c2a;
+  background: #171717;
   border-radius: 0.63vw;
   padding-left: 3.33vw;
   padding-top: 1.72vw;
   padding-bottom: 1.72vw;
+  justify-content: space-evenly
 }
 .money__btn {
-  padding-bottom: 0.78vw;
+  padding:0.99vw 0.78vw 0.99vw 0.78vw;
   display: flex;
   background: transparent;
-  border: 2px solid #f7f7f7;
+  border: 0;
   box-sizing: border-box;
   border-radius: 0.63vw;
   font-weight: 700;
@@ -304,7 +291,7 @@ input[type="checkbox"] {
   min-width: 89.32vw;
 }
 .modal-content {
-  background: #252331;
+  background: #281F27;
   border-radius: 20px;
 }
 .modal-header,
