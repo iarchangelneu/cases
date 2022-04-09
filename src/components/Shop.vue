@@ -2,147 +2,111 @@
     <section class="shop">
         <div class="container-fluid shop-container">
             <div class="row">
-                <div class="col-0 col-md-3">
-
-                </div>
-                <div class="col-md-9 col-12">
-                    <div class="d-flex justify-content-between align-items-center catalog__topfilters">
+                <div class="col-md-12 col-12">
+                    <div class="d-flex justify-content-between align-items-end catalog__topfilters">
                         <div class="d-flex align-items-center">
                             <img src="@/assets/img/reloadCatalog.png" class="catalog__reloadImg" alt="" @click="reloadCatalog">
                             <img src="@/assets/img/catalogLine.png" class="catalog__lineImg" alt="">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle dropdown__catalog" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    По умолчанию
+                                <button 
+                                class="btn dropdown-toggle dropdown__catalog" 
+                                type="button" 
+                                id="dropdownMenuButton" 
+                                data-toggle="dropdown" 
+                                aria-haspopup="true" 
+                                aria-expanded="false">
+                                    {{sort}}
                                     <img src="@/assets/img/catalogArrow.png" class="catalog__ArrowImg" alt="">
                                 </button>
                                 <div class="dropdown-menu catalog__dropmenu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item catalog__dropitem active" href="#">По умолчанию</a>
-                                    <a class="dropdown-item catalog__dropitem" href="#">По цене (Max)</a>
-                                    <a class="dropdown-item catalog__dropitem" href="#">По цене (Min)</a>
+                                    <a class="dropdown-item catalog__dropitem" href="#" @click="this.sort='По умолчанию'">По умолчанию</a>
+                                    <a class="dropdown-item catalog__dropitem" style="border-top: 1px solid white; border-bottom: 1px solid white;" href="#" @click="this.sort='По цене (Max)'">По цене (Max)</a>
+                                    <a class="dropdown-item catalog__dropitem" href="#" @click="this.sort='По цене (Min)'">По цене (Min)</a>
                                 </div>
                             </div>
-                            <!-- <div class="form-group mb-0">
-                                <select class="form-control dropdown__catalog" id="exampleFormControlSelect1">
-                                    <option class="catalog__dropitem">По умолчанию</option>
-                                    <option class="catalog__dropitem">По цене (Max)</option>
-                                    <option class="catalog__dropitem">По цене (Min)</option>
-                                </select>
-                            </div> -->
                         </div>
+                        
+                            <div class="prices__container">
+                                <span class="filters__spans">Цена</span>
+                                <div class="filter__prices">
+                                    <input type="text" class="price__min" placeholder="0.00" v-model.trim="lowprice">
+                                    <span class="ml-2 mr-2">&mdash;</span>
+                                    <input type="text" class="price__max" placeholder="0.00" v-model.trim="highprice">
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <span class="filters__spans">Редкость</span>
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle dropdown__filters" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{rarityList[rareSelect].rare}}
+                                        <img src="@/assets/img/catalogArrow.png" class="catalog__ArrowImg" alt="">
+                                    </button>
+                                    <div class="dropdown-menu catalog__dropmenu " aria-labelledby="dropdownMenuButton">
+                                        <a  
+                                        href="#"
+                                        v-for="rarity in rarityList" 
+                                        :key="rarity.id"
+                                        :class="['dropdown-item', 'catalog__dropitem', {'catalog__dropitemBorder': rarity.id !=5}]"
+                                        @click="this.rareSelect = rarity.id"
+                                        >
+                                        {{rarity.rare}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="filters__spans">Состояние</span>
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle dropdown__filters" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{conditionList[conditionSelect].cond}}
+                                        <img src="@/assets/img/catalogArrow.png" class="catalog__ArrowImg" alt="">
+                                    </button>
+                                    <div class="dropdown-menu catalog__dropmenu" aria-labelledby="dropdownMenuButton">
+                                        <a 
+                                        class="dropdown-item catalog__dropitem" 
+                                        v-for="condition in conditionList" 
+                                        :key="condition.id"
+                                        @click="this.conditionSelect = condition.id"
+                                        :class="['dropdown-item', 'catalog__dropitem', {'catalog__dropitemBorder': condition.id !=5}]"
+                                        >
+                                        {{condition.cond}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn filter__button">
+                                Применить
+                            </button>
+                            
+                        
                         <input type="text" class="catalog__search" placeholder="Поиск..." v-model.trim="search">
                     </div>    
                 </div>
             </div>
             <div class="row filtersAndCatalog">
-                <div class="col-md-3 col-12 filters">
-                    Цена
-                    <div class="filter__prices">
-                        <input type="text" class="price__min" placeholder="0.00" v-model.trim="lowprice">
-                        <span class="ml-2 mr-2">&mdash;</span>
-                        <input type="text" class="price__max" placeholder="0.00" v-model.trim="highprice">
-                    </div>
-               
-             <div class="rarity">
-                        <button 
-                        class="btn rarity__btn" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target="#collapseRare" aria-expanded="false" aria-controls="collapseRare">
-                            <span>
-                                Редкость
-                            </span>
-                            <span>+</span>
-                        </button>
-                        <div class="collapse" id="collapseRare">
-                            <div class="card card-body">
-                                    <label class="cheks__label" 
-                                    v-for="rarity in rarityList" 
-                                    :key="rarity.id">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox" :id="rarity.id"></div>
-                                        <span class="cheks__span">{{rarity.rare}}</span>
-                                    </label>
-                                    <!-- <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">Запрещенное</span>
-                                    </label>
-                                    <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">Засекреченное</span>
-                                    </label>
-                                    <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">Тайное</span>
-                                    </label>
-                                    <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">Экстра</span>
-                                    </label> -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CONDITION -->
-                    <div class="rarity">
-                        <button 
-                        class="btn rarity__btn" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target="#collapseCondition" aria-expanded="false" aria-controls="collapseCondition">
-                            <span>
-                                Состояние
-                            </span>
-                            <span>+</span>
-                        </button>
-                        <div class="collapse" id="collapseCondition">
-                            <div class="card card-body">
-                                    <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">Прямо из завода (FN)</span>
-                                    </label>
-                                    <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">Немного поношенное (MW)</span>
-                                    </label>
-                                    <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">После полевых испытаний (FT)</span>
-                                    </label>
-                                    <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">Поношенное (WW)</span>
-                                    </label>
-                                    <label class="cheks__label">
-                                        <div class="customCheckbox"><span><img src="../assets/img/Vector3.svg"></span><input type="checkbox"></div>
-                                        <span class="cheks__span">Закаленное в боях (BS)</span>
-                                    </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="btn filter__button">
-                        Применить фильтры
-                    </button>
-
-                </div>
-                <div class="col-12 col-md-9 catalog">
+                <div class="col-12 col-md-12 catalog">
                     <!-- <div class="row"> -->
                         <!-- <div class="col-2" > -->
                             <div class="item" v-for="item in filteredWeapons" :key="item.id" @click="openModal(item.id)">
                                 <div class="item__top">
-                                    <div class="item__rare">
-                                        {{item.rarity}}
+                                    <div class="d-flex flex-column">
+                                        <div class="item__rare">
+                                            {{item.rarity}}
+                                        </div>
+                                        <span class="item__price">
+                                            {{item.price}} ₸
+                                        </span>
                                     </div>
-                                    <img :src="item.img" class="item__img" alt="">
+                                    <div>FN</div>
+                                </div>
+                                <img :src="item.img" class="item__img" alt="">
+                                <div class="item__bottom">
                                     <span class="item__name">
                                         {{item.name}}
-                                    </span>
-                                </div>
-                                <div class="item__bottom">
-                                    <span class="item__price">
-                                        {{item.price}} ₸
-                                    </span>
-                                    <span class="item__condition">
-                                        FN
                                     </span>
                                 </div>
                                 <div class="item__more">
@@ -169,12 +133,22 @@ export default {
             modal: {
                 modalProductName: {},
             },
+            sort: 'По умолчанию',
             rarityList:[
-                {id: 0, rare: 'Армейское'},
-                {id: 1, rare: 'Запрещенное'},
-                {id: 2, rare: 'Засекреченное'},
-                {id: 3, rare: 'Тайное'},
-                {id: 4, rare: 'Экстра'},
+                {id: 0, rare: 'Любое'},
+                {id: 1, rare: 'Армейское'},
+                {id: 2, rare: 'Запрещенное'},
+                {id: 3, rare: 'Засекреченное'},
+                {id: 4, rare: 'Тайное'},
+                {id: 5, rare: 'Экстра'},
+            ],
+            conditionList:[
+                {id: 0, cond: 'Любое', short: 'All'},
+                {id: 1, cond: 'Factory New', short: 'FN'},
+                {id: 2, cond: 'Minimal Wear', short: 'MW'},
+                {id: 3, cond: 'Field-Tested', short: 'FT'},
+                {id: 4, cond: 'Well-Worn', short: 'WW'},
+                {id: 5, cond: 'Battle-Scarred', short: 'BS'},
             ],
             weapons: [
                 {
@@ -274,7 +248,8 @@ export default {
             search: '',
             lowprice: '',
             highprice: '',
-            rareSelect: [],
+            rareSelect: 0,
+            conditionSelect: 0,
         }
     },
     
@@ -311,40 +286,25 @@ export default {
                     return product.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 && product.price>this.lowprice;
                 }
             });
-            if(this.rareSelect.length != 0){
-                let resultedArr = []
-                this.rareSelect.forEach((item)=>{
-                    console.log(this.rarityList[item].rare);
+            // if(this.rareSelect.length != 0){
+            //     let resultedArr = []
+            //     this.rareSelect.forEach((item)=>{
+            //         console.log(this.rarityList[item].rare);
                 
-                resultedArr = resultedArr.concat(searched.filter(product => {
-                    return product.rarity.toLowerCase() == (this.rarityList[item].rare.toLowerCase())    
-                })
-                )
-                console.log(resultedArr)
-            })
-            return resultedArr
-            }
+            //     resultedArr = resultedArr.concat(searched.filter(product => {
+            //         return product.rarity.toLowerCase() == (this.rarityList[item].rare.toLowerCase())    
+            //     })
+            //     )
+            //     console.log(resultedArr)
+            // })
+            // return resultedArr
+            // }
             return searched
             
         }
     },
     mounted(){
-        let addrar = this.addRarity;
-        let remrar = this.removeRarity;
-        var checkboxs = $('input[type=checkbox]');
-        checkboxs.change(function(){
-        if($(this).is(':checked')){
-            // console.log($(this))
-        $(this).parent().addClass('customCheckboxChecked');
-        addrar($(this)[0].id)
-        } else {
-        $(this).parent().removeClass('customCheckboxChecked');
-        remrar($(this)[0].id)
-        }
-        });
-
         this.getData();
-        
     },
     components:{ProductModal}
 }
@@ -355,7 +315,7 @@ export default {
         padding-top: 160px;
     }
     .shop-container{
-        background-color: #252331;
+        background-color: #281F27;
         width: 96vw;
         padding-top: 30px;
         border-radius: 15px;
@@ -370,26 +330,39 @@ export default {
         cursor: pointer;
     }
     .catalog__lineImg{
-        margin-left: 1.563vw;
-        margin-right: 1.563vw;
+        margin-left: 0.563vw;
+        margin-right: 0.563vw;
     }
     .dropdown__catalog{
         color: white;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 1.250vw;
         background-color: unset;
+    }
+    .dropdown__filters{
+        margin-top: 15px;
+        color: white;
+        font-weight: 500;
+        font-size: 1.250vw;
+        background-color: #171717;
     }
     .dropdown__catalog::after{
         display: none;
+    }
+    .dropdown__filters::after{
+        display: none;
+    }
+    .dropdown__filters:focus{
+        box-shadow: 0 0 0 0.2rem #C62C44;
     }
     .catalog__ArrowImg{
         width: 30px;
     }
     .dropdown__catalog:focus{
-        box-shadow: 0 0 0 0.2rem #753ef9;
+        box-shadow: 0 0 0 0.2rem #C62C44;
     }
     .catalog__dropmenu{
-        background-color: #202025; 
+        background-color: #171717; 
         box-shadow: 0px 8px 16px 0px rgb(86 31 140 / 20%);
         color: white;   
     }
@@ -397,23 +370,26 @@ export default {
         color: white;
         font-size: 20px;
     }
+    .catalog__dropitemBorder{
+        border-bottom: 1px solid white;
+    }
     .catalog__dropmenu .active{
         background-color: #2d2d32;
-        color: #753ef9;
+        color: #C62C44;
         /* border: 1px solid #753ef9; */
     }
     .catalog__dropitem:hover{
         color: white;
         font-size: 20px;
-        background-color: #753ef9;
+        background-color: #C62C44;
     }
     .catalog__search{
-        background-color: #44434B;    
-        background: url(@/assets/img/loopCatalog.png) no-repeat 10px center #44434B;
+        background-color: #171717;    
+        background: url(@/assets/img/loopCatalog.png) no-repeat 10px center #171717;
         background-size: 30px;
         color: white;
         padding-left: 45px;
-        width: 33.229vw;
+        width: 20vw;
         height: 2.865vw;
         font-size: 24px;
         font-weight: 500;
@@ -442,34 +418,44 @@ export default {
         color: white;
         margin-top: 15px;
         display: flex;
+        align-items: center;
     }
     .price__min{
-        width: 120px;
+        width: 6.250vw;
         height: 43px;
         font-weight: 500;
-        font-size: 28px;
-        background-color: #36353C;
+        font-size: 1.458vw;
+        background-color: #171717;
         border-color: rgba(54,	53,	60, 0);
         border-radius: 5px;
-        background: url(@/assets/img/tenge.png) no-repeat right 10px center #44434B;
+        background: url(@/assets/img/tenge.png) no-repeat right 10px center #171717;
         padding-right: 30px;
         color: white;
 
     }
     .price__max{
-        width: 120px;
+        width: 6.250vw;
         height: 43px;
         font-weight: 500;
-        font-size: 28px;
-        background-color: #36353C;
+        font-size: 1.458vw;
+        background-color: #171717;
         border-color: rgba(54,	53,	60, 0);
         border-radius: 5px;
-        background: url(@/assets/img/tenge.png) no-repeat right 10px center #44434B;
+        background: url(@/assets/img/tenge.png) no-repeat right 10px center #171717;
         padding-right: 30px;
         color: white;
     }
 
+    .filters__spans{
+        color: white;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    
+    
     /* RARITY */
+    
     .rarity{
         display: flex;
         flex-direction: column;
@@ -544,16 +530,15 @@ export default {
 
     .filter__button{
         color: white;
-        background-color: #7B5ACB;
+        background: linear-gradient(to right top, #C62C44, #FF0027);
         border-radius: 10px;
-        margin-top: 30px;
     }
 
 /* CATALOG */
     .catalog{
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-column-gap: 10px;
+        grid-template-columns: repeat(7, 1fr);
+        grid-column-gap: 25px;
         grid-row-gap: 25px;
         max-height: 600px;
         overflow-y: auto;
@@ -578,32 +563,44 @@ export default {
         background-color: #36353C;
         border-radius: 5px;
         height: fit-content;
+        box-shadow: 2px 4px 10px #00000040;
     }
     .item__top{
-        position: relative;
+        /* position: relative; */
+        display: flex;
+        justify-content: space-between;
+        padding-right: 10px;
+        padding-left: 10px;
+        background-color: rgb(23, 23, 23, 0.5);
     }
     .item__rare{
         /* position: absolute; */
         top: 0;
-        margin-right: 5px;
-        text-align: right;
+        /* margin-right: 5px; */
+        /* text-align: right; */
     }
     .item__name{
         /* position: absolute; */
         bottom: 0;
         margin-left: 5px;
+        font-size: 20px;
+        font-weight: 500;
     }
     .item__img{
         width: 100%;
-        height: 6.406vw;
+        height: 9vw;
     }
     .item__bottom{
         padding: 0 5px;
         display: flex;
         justify-content: space-between;
     }
+    .item__price{
+        font-weight: 600;
+        font-size: 18px;
+    }
     .item__more{
-        background: linear-gradient(to right top, #753EF9, #9D75FF);
+        background: linear-gradient(to right top, #C62C44, #FF0027);
         color: white;
         font-weight: 600;
         font-size: 18px;
