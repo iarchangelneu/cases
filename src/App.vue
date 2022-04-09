@@ -47,7 +47,7 @@
 
   <log-reg>
     <template #header>
-      <div class="logreg__main">Авторизация</div>
+      <div class="logreg__main">Авторизацияя</div>
     </template>
     <template #body>
       <div class="modal__inputs">
@@ -170,7 +170,6 @@
         </div>
       </template>
   </payment-error>
-
 </template>
 <script>
 $(document).on('hidden.bs.modal', function (event) {
