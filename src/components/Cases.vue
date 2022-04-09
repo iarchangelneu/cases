@@ -327,7 +327,7 @@ export default {
         display: flex;
         flex-direction: column;
         /* border-bottom: 1px solid #F6F6F6; */
-        border-radius: 0 0 10px 10px;
+        border-radius:10px;
         width: 20vw;
         margin-left: auto;
         margin-right: auto;

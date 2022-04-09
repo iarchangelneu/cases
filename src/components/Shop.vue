@@ -144,11 +144,11 @@ export default {
             ],
             conditionList:[
                 {id: 0, cond: 'Любое', short: 'All'},
-                {id: 1, cond: 'Factory New', short: 'FN'},
-                {id: 2, cond: 'Minimal Wear', short: 'MW'},
-                {id: 3, cond: 'Field-Tested', short: 'FT'},
-                {id: 4, cond: 'Well-Worn', short: 'WW'},
-                {id: 5, cond: 'Battle-Scarred', short: 'BS'},
+                {id: 1, cond: 'Factory New', short: 'FN', float: 0},
+                {id: 2, cond: 'Minimal Wear', short: 'MW', float: 0.2},
+                {id: 3, cond: 'Field-Tested', short: 'FT', float: 0.4},
+                {id: 4, cond: 'Well-Worn', short: 'WW', float: 0.6},
+                {id: 5, cond: 'Battle-Scarred', short: 'BS', float: 0.8},
             ],
             weapons: [
                 {
@@ -157,7 +157,7 @@ export default {
                     rarity: 'Армейское',
                     name: 'Karambit',
                     pattern: 908,
-                    price: 255000,
+                    price: 1000,
                     float: 0.5,
                     collection: 'Red',
                 },
@@ -167,8 +167,8 @@ export default {
                     rarity: 'Запрещенное',
                     name: 'AK-47',
                     pattern: 908,
-                    price: 255000,
-                    float: 0.5,
+                    price: 2500,
+                    float: 0.3,
                     collection: 'Red-Line',
                 },
                 {
@@ -177,8 +177,8 @@ export default {
                     rarity: 'Засекреченное',
                     name: 'USP',
                     pattern: 908,
-                    price: 255000,
-                    float: 0.5,
+                    price: 7000,
+                    float: 0.7,
                     collection: 'Dark',
                 },
                 {
@@ -187,8 +187,8 @@ export default {
                     rarity: 'Тайное',
                     name: 'AWP',
                     pattern: 908,
-                    price: 255000,
-                    float: 0.5,
+                    price: 25000,
+                    float: 0.79,
                     collection: 'Dragon Lore',
                 },
                 {
@@ -197,8 +197,8 @@ export default {
                     rarity: 'Армейское',
                     name: 'Karambit',
                     pattern: 908,
-                    price: 255000,
-                    float: 0.5,
+                    price: 55000,
+                    float: 0.1,
                     collection: 'Red',
                 },
                 {
@@ -207,8 +207,8 @@ export default {
                     rarity: 'Запрещенное',
                     name: 'AK-47',
                     pattern: 908,
-                    price: 255000,
-                    float: 0.5,
+                    price: 35000,
+                    float: 0.2,
                     collection: 'Red-Line',
                 },
                 {
@@ -218,7 +218,7 @@ export default {
                     name: 'USP',
                     pattern: 908,
                     price: 255000,
-                    float: 0.5,
+                    float: 0.45,
                     collection: 'Dark',
                 },
                 {
@@ -227,8 +227,8 @@ export default {
                     rarity: 'Тайное',
                     name: 'AWP',
                     pattern: 908,
-                    price: 255000,
-                    float: 0.5,
+                    price: 152487,
+                    float: 0.14,
                     collection: 'Dragon Lore',
                 },
                 {
@@ -237,8 +237,8 @@ export default {
                     rarity: 'Тайное',
                     name: 'AWP',
                     pattern: 908,
-                    price: 255000,
-                    float: 0.5,
+                    price: 16000,
+                    float: 0.34,
                     collection: 'Dragon Lore',
 
                 },
@@ -267,6 +267,10 @@ export default {
         reloadCatalog(){
             this.search = '';
             this.lowprice = '';
+            this.highprice = ''
+            this.rareSelect = 0;
+            this.conditionSelect = 0;
+            this.sort = 'По умолчанию';
         },
         addRarity(id){
             this.rareSelect.push(id)
@@ -286,19 +290,32 @@ export default {
                     return product.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 && product.price>this.lowprice;
                 }
             });
-            // if(this.rareSelect.length != 0){
-            //     let resultedArr = []
-            //     this.rareSelect.forEach((item)=>{
-            //         console.log(this.rarityList[item].rare);
-                
-            //     resultedArr = resultedArr.concat(searched.filter(product => {
-            //         return product.rarity.toLowerCase() == (this.rarityList[item].rare.toLowerCase())    
-            //     })
-            //     )
-            //     console.log(resultedArr)
-            // })
-            // return resultedArr
-            // }
+            if(this.highprice !== ''){
+                searched = searched.filter((product) => {
+                    return product.price <= Number(this.highprice)    
+                })
+            };
+            if(this.rareSelect != 0){
+                searched = searched.filter(product => {
+                    return product.rarity.toLowerCase() == (this.rarityList[this.rareSelect].rare.toLowerCase())    
+                })
+            }
+            if(this.conditionSelect != 0){
+                searched = searched.filter(product => {
+                    return product.float >= (this.conditionList[this.conditionSelect].float)  && product.float <= (this.conditionList[this.conditionSelect+1].float)    
+                })    
+            }
+            if(this.sort==='По цене (Min)'){
+                searched.sort((a,b)=>{
+                    return a.price - b.price
+                })    
+            }
+            if(this.sort==='По цене (Max)')
+            {
+                searched.sort((a,b)=>{
+                    return b.price - a.price
+                })    
+            }
             return searched
             
         }
