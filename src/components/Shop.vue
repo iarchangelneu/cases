@@ -552,7 +552,7 @@ export default {
         width: 10px;
     }
     .catalog::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 20px #483E83;
+    box-shadow: inset 0 0 20px #FF0027;
     }
     
     .item{
