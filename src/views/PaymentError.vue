@@ -36,7 +36,7 @@ export default {
    min-width:49.01vw;
 }
 .modal-content {
-  background: #252331;
+  background: #281F27;
   border-radius: 20px;
 }
 .modal-header, .modal-footer{
