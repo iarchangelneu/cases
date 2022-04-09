@@ -22,7 +22,7 @@
           <img src="../assets/img/2sl.png" alt="" style="width: 37.50vw" />
         </div>
         <div class="slct">
-          <img src="@/assets/img/2slct.png" alt="">
+          <img src="@/assets/img/2slct.png" alt="" style="width:54.69vw">
         </div>
         <div class="stock__right2">
           <img src="../assets/img/2sltext.png" alt="" style="width: 33.65vw" />

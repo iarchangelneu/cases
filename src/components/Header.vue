@@ -6,23 +6,7 @@
     </div>
     <the-navbar></the-navbar>
     <div class="navbar" v-if="IsLoggedIn">
-      <div class="purse">
-        <button class="purse__btn" @click="topupMoney()">
-          <img src="../assets/img/purse.svg" alt="" style="width: 3.13vw" />
-        </button>
-        <p class="purse__count">0 ₸</p>
-      </div>
-      <div class="user">
-        <img src="../assets/img/avatar.svg" alt="" style="width: 1.82vw" class="accountHeaderImgPC" />
-        <div class="dropdown">
-          <img src="../assets/img/avatar.svg" alt="" style="" class="accountHeaderImgM" />
-          <p class="name">IlyuhaTopCSer</p>
-          <div class="dropdown-content">
-            <a href="/account">Профиль</a>
-            <a @click="IsLoggedIn = false">Выйти</a>
-          </div>
-        </div>
-        <button class="cart__btn" @click="openHeader()">
+      <button class="cart__btn" @click="openHeader()">
           <img
             src="../assets/img/cart.svg"
             alt=""
@@ -31,6 +15,23 @@
           <p class="cart__count">{{cartSum}}₸</p>
           <span></span>
         </button>
+      <div class="user">
+        <img src="../assets/img/avatar.svg" alt="" style="width: 3.13vw" class="accountHeaderImgPC" />
+        <div class="dropdown">
+          <img src="../assets/img/avatar.svg" alt="" style="" class="accountHeaderImgM" />
+          <p class="name">IlyuhaTopCSer</p>
+           <p class="purse__count">0 ₸</p>
+          <div class="dropdown-content">
+            <a href="/account">Профиль</a>
+            <a @click="IsLoggedIn = false">Выйти</a>
+          </div>
+        </div>
+        <div class="purse">
+        <button class="purse__btn" @click="topupMoney()">
+          <img src="../assets/img/purse.svg" alt="" style="width: 2.34vw"/>
+          <img src="@/assets/img/plusik.svg" style="width:1.56vw" alt="" class="plusik">
+        </button>
+      </div>
       </div>
     </div>
     <div class="sign__in" v-else>
@@ -113,9 +114,21 @@ export default {
 </script>
 
 <style scoped>
+.plusik{
+  position: absolute;
+  top: 0.36vw;
+  left: 3.18vw;
+}
+.user p{
+  margin-bottom:0 !important;
+}
+.navbar {
+  align-items: flex-start !important;
+}
 .dropdown {
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 
 .dropdown-content {
@@ -194,12 +207,14 @@ export default {
   -webkit-text-fill-color: transparent;
 }
 .purse {
+  position: relative;
   display: flex;
 }
 .purse__btn {
+  display: flex;
   border: 0;
-  background: #7b5acb;
-  border-radius: 5px;
+  background: linear-gradient(83.8deg, #C62C44 15.62%, #FF0027 91.62%);
+border-radius: 10px;
   width: 4.01vw;
   height: 2.24vw;
 }
@@ -225,10 +240,10 @@ export default {
   align-items: flex-start;
 }
 .cart__btn {
-  width: 4.58vw;
+  padding: 0.10vw 0.73vw 0.78vw 0.73vw;
   height: 2.24vw;
-  background: #7b5acb;
-  border-radius: 5px;
+  background: linear-gradient(83.8deg, #C62C44 15.62%, #FF0027 91.62%);
+border-radius: 10px;
   border: 0;
   display: flex;
 }

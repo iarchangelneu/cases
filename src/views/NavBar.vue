@@ -25,19 +25,9 @@ export default {
   color: #fff;
 }
 .active {
-  padding: 0.26vw 1.56vw 0.26vw 1.56vw;
-  background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border: 2px solid;
-  /* border-image-source: linear-gradient(
-    235.92deg,
-    #753ef9 14.85%,
-    #9d75ff 87.62%
-  ); */
-  border-color: #753ef9;
-  border-radius: 0.52vw;
-  border-image-slice: 1;
+ color:#C62C44;
+  text-decoration: underline;
+
 }
 @media screen and (max-width: 480px){
 .navbar__btn {
