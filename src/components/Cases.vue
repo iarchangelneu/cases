@@ -1,52 +1,54 @@
 <template>
         <div class="inner">
 
-            <div class="container">
+            <div class="container-fluid" style="position: relative;">
                 <div class="rel__text">
                     <img src="@/assets/img/titleraritcases.png" alt="">
                 </div>
-
-                <div class="rar__itemsfirstrow">
+                <img class="rareLeft" src="@/assets/img/rareLeft.png" alt="" @click="rarePrev">
+                <img class="rareRight" src="@/assets/img/rareRight.png" alt="" @click="rareNext">
+                <div class="rarItems">
                     <div class="">
-                        <div class="item">
+                        <div class="item item4">
                             <img src="@/assets/img/casesRar1.png" alt="" class="item__img">
+                            <span class="item__name">Тайное</span>
+                            <span class="item__price item__price4">999 ₸</span>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="item item5">
+                            <img src="@/assets/img/casesRar2.png" alt="" class="item__img">
+                            <span class="item__name">Нож</span>
+                            <span class="item__price item__price5">11499 ₸</span>
+                        </div>
+                    </div> 
+                    <div class="">
+                        <div class="item item1">
+                            <img src="@/assets/img/casesRar5.png" alt="" class="item__img">
                             <span class="item__name">Армейское</span>
                             <span class="item__price item__price1">45 ₸</span>
                         </div>
                     </div>
                     <div class="">
-                        <div class="item">
-                            <img src="@/assets/img/casesRar2.png" alt="" class="item__img">
+                        <div class="item item2">
+                            <img src="@/assets/img/casesRar4.png" alt="" class="item__img">
                             <span class="item__name">Запрещенное</span>
                             <span class="item__price item__price2">145 ₸</span>
                         </div>
                     </div>
                     <div class="">
-                        <div class="item">
+                        <div class="item item3">
                             <img src="@/assets/img/casesRar3.png" alt="" class="item__img">
                             <span class="item__name">Засекреченное</span>
                             <span class="item__price item__price3">345 ₸</span>
                             <div style="clear:both"></div>
                         </div>
                     </div>  
+                    
+                    
                 </div>
 
-                <div class="rar__itemssecondrow">
-                    <div class="">
-                        <div class="item">
-                            <img src="@/assets/img/casesRar4.png" alt="" class="item__img">
-                            <span class="item__name">Тайное</span>
-                            <span class="item__price item__price4">999 ₸</span>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="item">
-                            <img src="@/assets/img/casesRar5.png" alt="" class="item__img">
-                            <span class="item__name">Нож</span>
-                            <span class="item__price item__price5">11499 ₸</span>
-                        </div>
-                    </div> 
-                </div>
+                    
             </div>
         </div>
     
@@ -173,6 +175,12 @@ export default {
         },
         classicNext(){
             $('.sliderClassik').slick('slickNext');
+        },
+        rarePrev(){
+            $('.rarItems').slick('slickPrev');
+        },
+        rareNext(){
+            $('.rarItems').slick('slickNext');
         }
     },
     mounted() {
@@ -185,6 +193,21 @@ export default {
         // autoplay: true,
         arrows: false,
         draggable: false,
+        responsive: [
+            {
+            breakpoint: 480,
+            settings: {
+               slidesPerRow: 3,
+            }
+            },
+        ]
+        });
+    $('.rarItems').slick({
+        centerMode: true,
+        infinite: true,
+        slidesToShow: 3,
+        // autoplay: true,
+        arrows: false,
         responsive: [
             {
             breakpoint: 480,
@@ -269,9 +292,22 @@ export default {
     }
 
     /* RELITEMS */
-    .rar__itemsfirstrow{
-        display: flex;
-        justify-content: space-between;
+    .rarItems{
+        margin-top: 3vw;
+    }
+    .rareLeft{
+        position: absolute;
+        left: 5vw;
+        top:40%;
+        z-index: 10;
+        cursor: pointer;
+    }
+    .rareRight{
+        position: absolute;
+        right: 5vw;
+        top:40%;
+        z-index: 10;
+        cursor: pointer;
     }
     .rar__itemssecondrow{
         display: flex;
@@ -281,13 +317,40 @@ export default {
         padding-top: 2.917vw;
         display: flex;
         flex-direction: column;
-        border-bottom: 1px solid #F6F6F6;
+        /* border-bottom: 1px solid #F6F6F6; */
         border-radius: 0 0 10px 10px;
+        width: 20vw;
+        margin-left: auto;
+        margin-right: auto;
     }
+    
     .item__img{
         width: 15.625vw;  
         margin-left: auto;
         margin-right: auto;  
+    }
+    .slick-center img{
+        width: 18.625vw;     
+    }
+    .slick-center .item__price{ 
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #ffffff;
+        -webkit-text-stroke: 1px #ffffff;
+    }
+    .slick-center .item1{ 
+        border: 3px solid #4392DE;
+    }
+    .slick-center .item2{ 
+        border: 3px solid #9028F6;
+    }
+    .slick-center .item3{ 
+        border: 3px solid #F800F6;
+    }
+    .slick-center .item4{ 
+        border: 3px solid #F5002A;
+    }
+    .slick-center .item5{ 
+        border: 3px solid #F8CB15;
     }
     .item__name{
         padding-top: 1.042vw;
@@ -296,23 +359,28 @@ export default {
     }
     .item__price{
         padding-top: 1.042vw;
-        font-style: italic;
+        /* font-style: italic; */
         font-size: 1.875vw;
     }
     .item__price1{
         text-shadow: 2px 4px 4px #4392DE;
+        color: #4392DE;
     }
     .item__price2{
         text-shadow: 2px 4px 4px #9028F6;
+        color: #9028F6;
     }
     .item__price3{
         text-shadow: 2px 4px 4px #F800F6;
+        color: #F800F6;
     }
     .item__price4{
         text-shadow: 2px 4px 4px #F5002A;
+        color: #F5002A;
     }
     .item__price5{
         text-shadow: 2px 4px 4px #F8CB15;
+        color: #F8CB15;
     }
 /* CASES */
 .cases {
