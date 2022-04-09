@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-12 col-12">
                     <div class="d-flex justify-content-between align-items-end catalog__topfilters">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center reloadsort">
                             <img src="@/assets/img/reloadCatalog.png" class="catalog__reloadImg" alt="" @click="reloadCatalog">
                             <img src="@/assets/img/catalogLine.png" class="catalog__lineImg" alt="">
                             <div class="dropdown">
@@ -36,7 +36,7 @@
                             </div>
 
 
-                            <div>
+                            <div class="filtcontm">
                                 <span class="filters__spans">Редкость</span>
                                 <div class="dropdown">
                                     <button class="btn dropdown-toggle dropdown__filters" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,7 +57,7 @@
                                 </div>
                             </div>
 
-                            <div>
+                            <div class="filtcontm">
                                 <span class="filters__spans">Состояние</span>
                                 <div class="dropdown">
                                     <button class="btn dropdown-toggle dropdown__filters" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -617,8 +617,39 @@ export default {
     
     @media screen and (max-width:480px){
         .catalog{
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             margin-top: 20px;
+            grid-column-gap: 5px;
+        }
+        .reloadsort{
+            width: 100%;
+        }
+        .dropdown__catalog{
+            font-size: 4.25vw;
+        }
+        .prices__container{
+            width: 100%;
+        }
+        .price__min{
+            width: 30vw;
+            font-size: 5.458vw;
+        }
+        .price__max{
+            width: 30vw;
+            font-size: 5.458vw;
+        }
+        .filtcontm{
+            width: 100%;
+        }
+        .dropdown__filters{
+            font-size: 6.25vw;
+        }
+        .filter__button{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .item__img{
+            height: 38vw;
         }
         .catalog__topfilters{
             flex-wrap: wrap;

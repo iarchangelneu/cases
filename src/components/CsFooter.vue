@@ -239,5 +239,12 @@ export default {
   .adress {
     font-size: 2vw;
   }
+  .footer__numbersFirst{
+    background: unset;
+    margin-left: 15vw;
+  }
+  .footer__flex{
+    align-items: flex-start;
+  }
 }
 </style>

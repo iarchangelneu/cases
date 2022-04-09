@@ -171,7 +171,7 @@ export default {
             {
             breakpoint: 480,
             settings: {
-               slidesPerRow: 3,
+               slidesToShow: 1,
             }
             },
         ]
@@ -530,6 +530,20 @@ export default {
 }
 .cases__avatar img{
     width: 5vw !important;
+}
+
+.classicCases{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    margin-top: 3vw;
+}
+.casesclasivNav{
+    flex-direction: column;
+}
+.rel__text img{
+    width: 76vw;
 }
 }
 
