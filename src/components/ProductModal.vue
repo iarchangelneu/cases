@@ -9,15 +9,18 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-5 col-5">
+                    <div class="col-md-12 col-12">
+                        <div class="productModal__name">
+                                {{product.name}} | Gamma Doppler Emerald
+                        </div> 
+                    </div>
+                    <div class="col-md-12 col-12">
                         <img src="@/assets/img/cataloitem_1.png" alt="" class="productModal__img">    
                     </div>
-                    <div class="col-md-7 col-7">
+                    <div class="col-md-12 col-12">
 
                         <div class="productModal__card">
-                            <span class="productModal__name">
-                                {{product.name}} | Gamma Doppler Emerald
-                            </span>
+                            
                             <div class="productModal__table">
                                 <div class="productModal__row">
                                     <span>
@@ -87,6 +90,9 @@ export default {
 </script>
 
 <style scoped>
+.modal-dialog{
+    min-width: 29.32vw;    
+}
 #ProductModal{
     color: white;
 }
@@ -96,26 +102,29 @@ export default {
 }
 #ProductModal .modal-content{
     color: white;
-    background-color: #1F1F23;
+    background-color: #281F27;
 }
 .productModal__card{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #252331;
+    /* background-color: #252331; */
     padding: 1.042vw 1.563vw 2.083vw 1.563vw;
     border-radius: 10px;
 }
 .productModal__img{
-    width: 100%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 .productModal__name{
     font-weight: 700;
     font-size: 1.354vw;
+    text-align: center;
 }
 .productModal__table{
     margin-top: 1.823vw;  
-    background-color: #36353C;
+    background-color: #3C3537;
     border-radius: 10px;  
 }
 .productModal__row{
@@ -130,14 +139,16 @@ export default {
     border-bottom: 1px solid #F6F6F6CC;
 }
 .productModal__btn{
-    background: linear-gradient(to right top, #753EF9, #9D75FF);
+    background: linear-gradient(to right top, #C62C44, #FF0027);
+    border-color: #FF0027;
     border-radius: 5px;
     color: white;
     font-weight: 700;
     font-size: 1.146vw;
 }
 .productModal__btnM{
-    background: linear-gradient(to right top, #753EF9, #9D75FF);
+    background: linear-gradient(to right top, #FF0027, #FF0027);
+    border-color: #FF0027;
     border-radius: 5px;
     color: white;
     font-weight: 700;

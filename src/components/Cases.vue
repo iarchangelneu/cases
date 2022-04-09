@@ -1,44 +1,9 @@
 <template>
-    <div class="stock">
         <div class="inner">
-            <div class="livecontall">
-                <img class="live__star" src="@/assets/img/liveStar.png" alt="">
-            <div class="livecont">
-                <div class="live">
-                    <div><img class="live__images" src="@/assets/img/live4.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live6.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live2.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live12.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live9.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live10.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live5.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live1.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live7.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live8.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live3.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live12.png" alt=""></div>
-
-                    <div><img class="live__images" src="@/assets/img/live13.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live17.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live18.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live15.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live21.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live20.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live5.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live22.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live14.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live16.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live19.png" alt=""></div>
-                    <div><img class="live__images" src="@/assets/img/live11.png" alt=""></div>
-                </div>    
-            </div>
-            </div>
 
             <div class="container">
                 <div class="rel__text">
-                    <img src="@/assets/img/CasesUspRar.png" alt="">
-                    <span class="stock__text">Кейсы по раритетности</span>
-                    <hr />
+                    <img src="@/assets/img/titleraritcases.png" alt="">
                 </div>
 
                 <div class="rar__itemsfirstrow">
@@ -63,7 +28,6 @@
                             <span class="item__price item__price3">345 ₸</span>
                             <div style="clear:both"></div>
                         </div>
-                        
                     </div>  
                 </div>
 
@@ -85,7 +49,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    
     <div class="cases">
     <div class="cases__content">
       <div class="cases__avatar">
@@ -212,22 +176,6 @@ export default {
         }
     },
     mounted() {
-    $('.live').slick({
-        infinite: true,
-        slidesToShow: 12,
-        slidesToScroll: 1,
-        autoplay: true,
-        arrows: false,
-        draggable: false,
-        responsive: [
-            {
-            breakpoint: 480,
-            settings: {
-               slidesToShow: 6,
-            }
-            },
-        ]
-        });
     $('.sliderClassik').slick({
         infinite: true,
         rows: 2,
@@ -268,13 +216,13 @@ export default {
   background: rgba(32, 32, 37, 0.96);
 }
 .inner {
-  background: no-repeat url("../assets/img/brightness.png");
-  background-position: right 59px;
+  /* background: no-repeat url("../assets/img/brightness.png"); */
+  /* background-position: right 59px; */
   position: relative;
   z-index: 3;
   color: #fff;
   text-align: center;
-  padding-top: 12.19vw;
+  padding-top: 6.19vw;
 }
 /* LIVE */
     .livecontall{
@@ -298,7 +246,7 @@ export default {
     }
 /* LIVE */
     .stock__text {
-        text-shadow: 5px 4px 30px #561f8c, 2px 4px 4px #561f8c;
+        text-shadow: 5px 4px 30px rgb(255, 0, 0), 2px 4px 4px rgba(255, 0, 0,0.2);
         color: #f7f7f7;
         font-weight: 800;
         font-size: 3.13vw;
@@ -317,7 +265,7 @@ export default {
         align-items: center;
     }
     .rel__text img{
-        width: 2.604vw;    
+        width: 31.250vw;    
     }
 
     /* RELITEMS */
