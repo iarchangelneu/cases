@@ -51,92 +51,68 @@
                     
             </div>
         </div>
-    
-    <div class="cases">
-    <div class="cases__content">
-      <div class="cases__avatar">
-        <img
-          src="../assets/img/cassesNew.png"
-          alt=""
-          style="width: 2.6vw"
-        />
-      </div>
-      <p class="stock__text">Новые кейсы</p>
-      <hr />
-      <div class="cases__popular">
-        <div class="cases__popular__content">
-          <img
-            src="../assets/img/homeless__case.png"
-            alt=""
-            style="width: 15.63vw"
-          />
-          <p class="cases__desc">Кейс Бомжа</p>
-          <p class="cases__price">145 ₸</p>
-        </div>
-        <div class="cases__popular__content">
-          <img
-            src="../assets/img/red__case.png"
-            alt=""
-            style="width: 15.63vw"
-          />
-          <p class="cases__desc">Красный кейс</p>
-          <p class="cases__price">145 ₸</p>
-        </div>
-        <div class="cases__popular__content">
-          <img
-            src="../assets/img/neon__case.png"
-            alt=""
-            style="width: 15.63vw"
-          />
-          <p class="cases__desc">Неон</p>
-          <p class="cases__price">145 ₸</p>
-        </div>
-        <div class="cases__popular__content">
-          <img
-            src="../assets/img/vip__case.png"
-            alt=""
-            style="width: 15.63vw"
-          />
-          <p class="cases__desc">VIP кейс</p>
-          <p class="cases__price">145 ₸</p>
-        </div>
-        <div class="cases__popular__content">
-          <img
-            src="../assets/img/deputat__case.png"
-            alt=""
-            style="width: 15.63vw"
-          />
-          <p class="cases__desc">Кейс сына депутата</p>
-          <p class="cases__price">145 ₸</p>
-        </div>
-      </div>
-
-      <div class="cases__avatar">
-        <img
-          src="../assets/img/classikcases.png"
-          alt=""
-          style="width: 2.6vw"
-        />
-      </div>
-      <p class="stock__text">Классические кейсы</p>
-      <hr />
-    </div>
-  </div>
 
   <div class="cases__classic">
-      <div class="sliderClassikCont">
-          <img src="@/assets/img/casesLeft.png" class="casesLeft" @click="classicPrev" alt="">
-          <img src="@/assets/img/casesRight.png" class="casesRight" @click="classicNext">
-        <div class="sliderClassik">
-            <div v-for="item in cases" :key="item">
-                <div class="classic__case">
-                    <img src="../assets/img/homeless__case.png" alt="" class="classic__img"/>
-                    <p class="cases__desc">{{item.name}}</p>
-                    <p class="cases__price">{{item.price}} ₸</p>
-                </div>   
-            </div>
+        <div class="rel__text">
+            <img src="@/assets/img/allcases.png" alt="">
         </div>
-      </div>
+        <div class="cassesCont">
+            <div class="casesclasivNav">
+                <div class="NavGroup">
+                <div @click="activeTab='New'" :class="['cassesNavTab', {'cassesNavTabactive': activeTab=='New'}]">
+                    Новые
+                </div>
+                <hr v-if="activeTab=='New'">
+                </div>
+                <div class="NavGroup">
+                    <div @click="activeTab='Classik'" :class="['cassesNavTab', {'cassesNavTabactive': activeTab=='Classik'}]">
+                        Классические
+                    </div>
+                    <hr v-if="activeTab=='Classik'">
+                </div>
+                <div class="NavGroup">
+                    <div @click="activeTab='Sale'" :class="['cassesNavTab', {'cassesNavTabactive': activeTab=='Sale'}]">
+                        Со скидкой
+                    </div>
+                    <hr v-if="activeTab=='Sale'">
+                </div>
+            </div>
+            <div class="classicCases" v-if="activeTab=='New'">
+                <div class="case" v-for="cs in cases" :key="cs">
+                    <img src="@/assets/img/caseImg.png" alt="" class="caseIm">
+                    <div class="caseName">
+                        Alpha
+                    </div>
+                    <div class="casePrice">
+                        29 ₸
+                    </div>
+                </div>
+            </div>  
+
+            <div class="classicCases" v-if="activeTab=='Classik'">
+                <div class="case" v-for="cs in cases" :key="cs">
+                    <img src="@/assets/img/caseImg.png" alt="" class="caseIm">
+                    <div class="caseName">
+                        Chroma
+                    </div>
+                    <div class="casePrice">
+                        29 ₸
+                    </div>
+                </div>
+            </div>
+
+            <div class="classicCases" v-if="activeTab=='Sale'">
+                <div class="case" v-for="cs in cases" :key="cs">
+                    <img src="@/assets/img/caseImg.png" alt="" class="caseIm">
+                    <div class="caseName">
+                        Gama
+                    </div>
+                    <div class="casePrice">
+                        29 ₸
+                    </div>
+                </div>
+            </div>     
+        </div>
   </div>
 
 
@@ -166,7 +142,8 @@ export default {
                     {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
                     {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
                     {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-            ]
+            ],
+            activeTab: 'Classik'
         }
     },
     methods:{
@@ -184,24 +161,6 @@ export default {
         }
     },
     mounted() {
-    $('.sliderClassik').slick({
-        infinite: true,
-        rows: 2,
-        slidesToShow: 1,
-        slidesPerRow: 5,
-        slidesToScroll: 1,
-        // autoplay: true,
-        arrows: false,
-        draggable: false,
-        responsive: [
-            {
-            breakpoint: 480,
-            settings: {
-               slidesPerRow: 3,
-            }
-            },
-        ]
-        });
     $('.rarItems').slick({
         centerMode: true,
         infinite: true,
@@ -222,6 +181,56 @@ export default {
 </script>
 
 <style scoped>
+.NavGroup{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.classicCases{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    margin-top: 3vw;
+}
+.casesclasivNav{
+    display: flex;
+    font-weight: 600;
+    font-size: 44px;
+    color: white;
+    justify-content: space-evenly
+}
+.cassesNavTab{
+    cursor: pointer;
+}
+.cassesNavTabactive{
+    cursor: pointer;
+    color: #F5002A;
+}
+.case{
+    display: flex;
+    flex-direction: column;
+}
+.caseIm{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.caseName{
+    font-weight: 600; 
+    font-size: 30px;
+    text-align: center;
+    color: white;   
+}
+.casePrice{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;   
+    color: #F5002A; 
+}
+
+
 .stock {
   background: no-repeat url("../assets/img/bg1.png");
   background-size: cover;
@@ -276,7 +285,7 @@ export default {
     }
     hr {
         border: 3px solid #ffffff;
-        box-shadow: 0px 2px 4px #9028f6;
+        box-shadow: 0px 2px 4px #F5002A;
         filter: blur(1px);
         width: 10.68vw;
         text-align: center;
@@ -389,6 +398,13 @@ export default {
   background-size: cover;
   -webkit-background-size: cover;
   position: relative;
+}
+.cassesCont{
+    background-color: #281F27;
+    padding: 30px 15px;
+    border-radius: 15px;  
+    margin-left: 15px;
+    margin-right: 15px;      
 }
 .cases:after {
   content: "";
