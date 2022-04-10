@@ -40,7 +40,7 @@
                 </p>
               </div>
             </div>
-            <div class="how__flex" style="margin-left:39.28vw">
+            <div class="how__flex2" style="margin-left:39.28vw">
               <div class="how__steps">
                 <img
                   src="../assets/img/step4.png"
@@ -75,6 +75,10 @@ export default {};
 
 <style scoped>
 .how__flex {
+  display: flex;
+  justify-content: space-between;
+}
+.how__flex2 {
   display: flex;
   justify-content: space-between;
 }
@@ -120,11 +124,12 @@ export default {};
   border-bottom-right-radius: 2.6vw;
 }
 @media screen and (max-width: 480px) {
-  /* .how__steps img{
-    width: 14vw !important;
-  } */
+  .how__flex{
+    margin-left: 32.73vw !important;
+    margin-top:-8vw !important;
+  }
   .how__text {
-    font-size: 2.2vw;
+    font-size: 1.2vw;
   }
   .how__main {
     font-size: 3.2vw;

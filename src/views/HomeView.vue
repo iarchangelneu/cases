@@ -40,6 +40,7 @@
         <img
           src="@/assets/img/textleft.png"
           style="width: 34.84vw; margin-left: 7.57vw"
+          class="cases__mainimg"
         />
         <div class="cases__popular">
           <div class="cases__popular__content">
@@ -87,6 +88,7 @@
         <img
           src="@/assets/img/textright.png"
           style="width: 41.41vw; margin-left: 3.17vw"
+          class="cases__mainimg2"
         />
         <div class="cases__popular cases_p">
           <div class="cases__popular__content">
@@ -310,11 +312,21 @@ hr {
     font-size: 2.67vw;
   }
   .inner {
-    padding-top: 18.18vw;
+    padding-top: 11.9vw;
     background: 0;
   }
   .stock__text {
     font-size: 3.93vw;
+  }
+  .stock__button{
+    margin-top: -4vw;
+    padding-bottom: 0;
+  }
+  .cases__mainimg{
+    margin-left: 29vw !important;
+  }
+    .cases__mainimg2{
+    margin-left: 26vw !important;
   }
   .stock__btn {
     font-size: 2.67vw;

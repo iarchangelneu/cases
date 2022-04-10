@@ -223,6 +223,10 @@ export default {
 }
 
 @media screen and (max-width: 480px) {
+  .footer__navl{
+    padding-left: 0;
+    width:5.21vw;
+}
   .ak47 img,
   .footer__logo {
     width: 20vw;
