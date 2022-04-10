@@ -1,235 +1,324 @@
 <template>
-        <div class="inner">
-
-            <div class="container-fluid" style="position: relative;">
-                <div class="rel__text">
-                    <img src="@/assets/img/titleraritcases.png" alt="">
-                </div>
-                <img class="rareLeft" src="@/assets/img/rareLeft.png" alt="" @click="rarePrev">
-                <img class="rareRight" src="@/assets/img/rareRight.png" alt="" @click="rareNext">
-                <div class="rarItems">
-                    <div class="">
-                        <div class="item item4">
-                            <img src="@/assets/img/casesRar1.png" alt="" class="item__img">
-                            <span class="item__name">Тайное</span>
-                            <span class="item__price item__price4">999 ₸</span>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="item item5">
-                            <img src="@/assets/img/casesRar2.png" alt="" class="item__img">
-                            <span class="item__name">Нож</span>
-                            <span class="item__price item__price5">11499 ₸</span>
-                        </div>
-                    </div> 
-                    <div class="">
-                        <div class="item item1">
-                            <img src="@/assets/img/casesRar5.png" alt="" class="item__img">
-                            <span class="item__name">Армейское</span>
-                            <span class="item__price item__price1">45 ₸</span>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="item item2">
-                            <img src="@/assets/img/casesRar4.png" alt="" class="item__img">
-                            <span class="item__name">Запрещенное</span>
-                            <span class="item__price item__price2">145 ₸</span>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="item item3">
-                            <img src="@/assets/img/casesRar3.png" alt="" class="item__img">
-                            <span class="item__name">Засекреченное</span>
-                            <span class="item__price item__price3">345 ₸</span>
-                            <div style="clear:both"></div>
-                        </div>
-                    </div>  
-                    
-                    
-                </div>
-
-                    
-            </div>
+  <div class="inner">
+    <div class="container-fluid" style="position: relative">
+      <div class="rel__text">
+        <img src="@/assets/img/titleraritcases.png" alt="" />
+      </div>
+      <img
+        class="rareLeft"
+        src="@/assets/img/rareLeft.png"
+        alt=""
+        @click="rarePrev"
+      />
+      <img
+        class="rareRight"
+        src="@/assets/img/rareRight.png"
+        alt=""
+        @click="rareNext"
+      />
+      <div class="rarItems">
+        <div class="">
+          <div class="item item4">
+            <img src="@/assets/img/casesRar1.png" alt="" class="item__img" />
+            <span class="item__name">Тайное</span>
+            <span class="item__price item__price4">999 ₸</span>
+          </div>
         </div>
-
-  <div class="cases__classic">
-        <div class="rel__text">
-            <img src="@/assets/img/allcases.png" alt="">
+        <div class="">
+          <div class="item item5">
+            <img src="@/assets/img/casesRar2.png" alt="" class="item__img" />
+            <span class="item__name">Нож</span>
+            <span class="item__price item__price5">11499 ₸</span>
+          </div>
         </div>
-        <div class="cassesCont">
-            <div class="casesclasivNav">
-                <div class="NavGroup">
-                <div @click="activeTab='New'" :class="['cassesNavTab', {'cassesNavTabactive': activeTab=='New'}]">
-                    Новые
-                </div>
-                <hr v-if="activeTab=='New'">
-                </div>
-                <div class="NavGroup">
-                    <div @click="activeTab='Classik'" :class="['cassesNavTab', {'cassesNavTabactive': activeTab=='Classik'}]">
-                        Классические
-                    </div>
-                    <hr v-if="activeTab=='Classik'">
-                </div>
-                <div class="NavGroup">
-                    <div @click="activeTab='Sale'" :class="['cassesNavTab', {'cassesNavTabactive': activeTab=='Sale'}]">
-                        Со скидкой
-                    </div>
-                    <hr v-if="activeTab=='Sale'">
-                </div>
-            </div>
-            <div class="classicCases" v-if="activeTab=='New'">
-                <div class="case" v-for="cs in cases" :key="cs">
-                    <img src="@/assets/img/caseImg.png" alt="" class="caseIm">
-                    <div class="caseName">
-                        Alpha
-                    </div>
-                    <div class="casePrice">
-                        29 ₸
-                    </div>
-                </div>
-            </div>  
-
-            <div class="classicCases" v-if="activeTab=='Classik'">
-                <div class="case" v-for="cs in cases" :key="cs">
-                    <img src="@/assets/img/caseImg.png" alt="" class="caseIm">
-                    <div class="caseName">
-                        Chroma
-                    </div>
-                    <div class="casePrice">
-                        29 ₸
-                    </div>
-                </div>
-            </div>
-
-            <div class="classicCases" v-if="activeTab=='Sale'">
-                <div class="case" v-for="cs in cases" :key="cs">
-                    <img src="@/assets/img/caseImg.png" alt="" class="caseIm">
-                    <div class="caseName">
-                        Gama
-                    </div>
-                    <div class="casePrice">
-                        29 ₸
-                    </div>
-                </div>
-            </div>     
+        <div class="">
+          <div class="item item1">
+            <img src="@/assets/img/casesRar5.png" alt="" class="item__img" />
+            <span class="item__name">Армейское</span>
+            <span class="item__price item__price1">45 ₸</span>
+          </div>
         </div>
+        <div class="">
+          <div class="item item2">
+            <img src="@/assets/img/casesRar4.png" alt="" class="item__img" />
+            <span class="item__name">Запрещенное</span>
+            <span class="item__price item__price2">145 ₸</span>
+          </div>
+        </div>
+        <div class="">
+          <div class="item item3">
+            <img src="@/assets/img/casesRar3.png" alt="" class="item__img" />
+            <span class="item__name">Засекреченное</span>
+            <span class="item__price item__price3">345 ₸</span>
+            <div style="clear: both"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <div class="cases__classic">
+    <div class="rel__text">
+      <img src="@/assets/img/allcases.png" alt="" />
+    </div>
+    <div class="cassesCont">
+      <div class="casesclasivNav">
+        <div class="NavGroup">
+          <div
+            @click="activeTab = 'New'"
+            :class="[
+              'cassesNavTab',
+              { cassesNavTabactive: activeTab == 'New' },
+            ]"
+          >
+            Новые
+          </div>
+          <hr v-if="activeTab == 'New'" />
+        </div>
+        <div class="NavGroup">
+          <div
+            @click="activeTab = 'Classik'"
+            :class="[
+              'cassesNavTab',
+              { cassesNavTabactive: activeTab == 'Classik' },
+            ]"
+          >
+            Классические
+          </div>
+          <hr v-if="activeTab == 'Classik'" />
+        </div>
+        <div class="NavGroup">
+          <div
+            @click="activeTab = 'Sale'"
+            :class="[
+              'cassesNavTab',
+              { cassesNavTabactive: activeTab == 'Sale' },
+            ]"
+          >
+            Со скидкой
+          </div>
+          <hr v-if="activeTab == 'Sale'" />
+        </div>
+      </div>
+      <div class="classicCases" v-if="activeTab == 'New'">
+        <div class="case" v-for="cs in cases" :key="cs">
+          <img src="@/assets/img/caseImg.png" alt="" class="caseIm" />
+          <div class="caseName">Alpha</div>
+          <div class="casePrice">29 ₸</div>
+        </div>
+      </div>
 
+      <div class="classicCases" v-if="activeTab == 'Classik'">
+        <div class="case" v-for="cs in cases" :key="cs">
+          <img src="@/assets/img/caseImg.png" alt="" class="caseIm" />
+          <div class="caseName">Chroma</div>
+          <div class="casePrice">29 ₸</div>
+        </div>
+      </div>
+
+      <div class="classicCases" v-if="activeTab == 'Sale'">
+        <div class="case" v-for="cs in cases" :key="cs">
+          <img src="@/assets/img/caseImg.png" alt="" class="caseIm" />
+          <div class="caseName">Gama</div>
+          <div class="casePrice">29 ₸</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            cases: [{img:'../assets/img/homeless__case.png',name:'Кейс бомжа',price: '145'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа',price: '145'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-                    {img:'../assets/img/homeless__case.png',name:'Кейс бомжа2',price: '300'},
-            ],
-            activeTab: 'Classik'
-        }
+  data() {
+    return {
+      cases: [
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа",
+          price: "145",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа",
+          price: "145",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+        {
+          img: "../assets/img/homeless__case.png",
+          name: "Кейс бомжа2",
+          price: "300",
+        },
+      ],
+      activeTab: "Classik",
+    };
+  },
+  methods: {
+    classicPrev() {
+      $(".sliderClassik").slick("slickPrev");
     },
-    methods:{
-        classicPrev(){
-            $('.sliderClassik').slick('slickPrev');
-        },
-        classicNext(){
-            $('.sliderClassik').slick('slickNext');
-        },
-        rarePrev(){
-            $('.rarItems').slick('slickPrev');
-        },
-        rareNext(){
-            $('.rarItems').slick('slickNext');
-        }
+    classicNext() {
+      $(".sliderClassik").slick("slickNext");
     },
-    mounted() {
-    $('.rarItems').slick({
-        centerMode: true,
-        infinite: true,
-        slidesToShow: 3,
-        // autoplay: true,
-        arrows: false,
-        responsive: [
-            {
-            breakpoint: 480,
-            settings: {
-               slidesToShow: 1,
-            }
-            },
-        ]
-        });
-    }
-}
+    rarePrev() {
+      $(".rarItems").slick("slickPrev");
+    },
+    rareNext() {
+      $(".rarItems").slick("slickNext");
+    },
+  },
+  mounted() {
+    $(".rarItems").slick({
+      centerMode: true,
+      infinite: true,
+      slidesToShow: 3,
+      // autoplay: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
+  },
+};
 </script>
 
 <style scoped>
-.NavGroup{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+.NavGroup {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
-.classicCases{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: 25px;
-    grid-row-gap: 25px;
-    margin-top: 1vw;
+.classicCases {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  margin-top: 1vw;
 }
-.casesclasivNav{
-    display: flex;
-    font-weight: 600;
-    font-size: 44px;
-    color: white;
-    justify-content: space-evenly
+.casesclasivNav {
+  display: flex;
+  font-weight: 600;
+  font-size: 2.29vw;
+  color: white;
+  justify-content: space-evenly;
 }
-.cassesNavTab{
-    cursor: pointer;
+.cassesNavTab {
+  cursor: pointer;
 }
-.cassesNavTabactive{
-    cursor: pointer;
-    color: #F5002A;
+.cassesNavTabactive {
+  cursor: pointer;
+  color: #f5002a;
 }
-.case{
-    display: flex;
-    flex-direction: column;
+.case {
+  display: flex;
+  flex-direction: column;
 }
-.caseIm{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+.caseIm {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.caseName{
-    font-weight: 600; 
-    font-size: 30px;
-    text-align: center;
-    color: white;   
+.caseName {
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+  color: white;
 }
-.casePrice{
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 33px;
-    text-align: center;   
-    color: #F5002A; 
+.casePrice {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  text-align: center;
+  color: #f5002a;
 }
-
 
 .stock {
   background: no-repeat url("../assets/img/bg1.png");
@@ -257,140 +346,140 @@ export default {
   padding-top: 6.19vw;
 }
 /* LIVE */
-    .livecontall{
-        width: 100%;
-        position: relative;
-        /* margin-top: 2.604vw; */
-    }
-    .livecont{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .live__star{
-        width: 3.750vw;  
-        position: absolute; 
-        top: 25%; 
-        left: 0;
-    }
-    .live__images{
-        width: 7.292vw;
-    }
+.livecontall {
+  width: 100%;
+  position: relative;
+  /* margin-top: 2.604vw; */
+}
+.livecont {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.live__star {
+  width: 3.75vw;
+  position: absolute;
+  top: 25%;
+  left: 0;
+}
+.live__images {
+  width: 7.292vw;
+}
 /* LIVE */
-    .stock__text {
-        text-shadow: 5px 4px 30px rgb(255, 0, 0), 2px 4px 4px rgba(255, 0, 0,0.2);
-        color: #f7f7f7;
-        font-weight: 800;
-        font-size: 3.13vw;
-    }
-    hr {
-        border: 3px solid #ffffff;
-        box-shadow: 0px 2px 4px #F5002A;
-        filter: blur(1px);
-        width: 10.68vw;
-        text-align: center;
-    }
-    .rel__text{
-        padding-top: 2.604vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .rel__text img{
-        width: 31.250vw;    
-    }
+.stock__text {
+  text-shadow: 5px 4px 30px rgb(255, 0, 0), 2px 4px 4px rgba(255, 0, 0, 0.2);
+  color: #f7f7f7;
+  font-weight: 800;
+  font-size: 3.13vw;
+}
+hr {
+  border: 3px solid #ffffff;
+  box-shadow: 0px 2px 4px #f5002a;
+  filter: blur(1px);
+  width: 10.68vw;
+  text-align: center;
+}
+.rel__text {
+  padding-top: 2.604vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rel__text img {
+  width: 31.25vw;
+}
 
-    /* RELITEMS */
-    .rarItems{
-        margin-top: 3vw;
-    }
-    .rareLeft{
-        position: absolute;
-        left: 5vw;
-        top:40%;
-        z-index: 10;
-        cursor: pointer;
-    }
-    .rareRight{
-        position: absolute;
-        right: 5vw;
-        top:40%;
-        z-index: 10;
-        cursor: pointer;
-    }
-    .rar__itemssecondrow{
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .item{
-        padding-top: 2.917vw;
-        display: flex;
-        flex-direction: column;
-        /* border-bottom: 1px solid #F6F6F6; */
-        border-radius:10px;
-        width: 20vw;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .item__img{
-        width: 15.625vw;  
-        margin-left: auto;
-        margin-right: auto;  
-    }
-    .slick-center img{
-        width: 18.625vw;     
-    }
-    .slick-center .item__price{ 
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #ffffff;
-        -webkit-text-stroke: 1px #ffffff;
-    }
-    .slick-center .item1{ 
-        border: 3px solid #4392DE;
-    }
-    .slick-center .item2{ 
-        border: 3px solid #9028F6;
-    }
-    .slick-center .item3{ 
-        border: 3px solid #F800F6;
-    }
-    .slick-center .item4{ 
-        border: 3px solid #F5002A;
-    }
-    .slick-center .item5{ 
-        border: 3px solid #F8CB15;
-    }
-    .item__name{
-        padding-top: 1.042vw;
-        font-size: 1.354vw;    
-        letter-spacing: 2.5%;
-    }
-    .item__price{
-        padding-top: 1.042vw;
-        /* font-style: italic; */
-        font-size: 1.875vw;
-    }
-    .item__price1{
-        text-shadow: 2px 4px 4px #4392DE;
-        color: #4392DE;
-    }
-    .item__price2{
-        text-shadow: 2px 4px 4px #9028F6;
-        color: #9028F6;
-    }
-    .item__price3{
-        text-shadow: 2px 4px 4px #F800F6;
-        color: #F800F6;
-    }
-    .item__price4{
-        text-shadow: 2px 4px 4px #F5002A;
-        color: #F5002A;
-    }
-    .item__price5{
-        text-shadow: 2px 4px 4px #F8CB15;
-        color: #F8CB15;
-    }
+/* RELITEMS */
+.rarItems {
+  margin-top: 3vw;
+}
+.rareLeft {
+  position: absolute;
+  left: 5vw;
+  top: 40%;
+  z-index: 10;
+  cursor: pointer;
+}
+.rareRight {
+  position: absolute;
+  right: 5vw;
+  top: 40%;
+  z-index: 10;
+  cursor: pointer;
+}
+.rar__itemssecondrow {
+  display: flex;
+  justify-content: space-evenly;
+}
+.item {
+  padding-top: 2.917vw;
+  display: flex;
+  flex-direction: column;
+  /* border-bottom: 1px solid #F6F6F6; */
+  border-radius: 10px;
+  width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item__img {
+  width: 15.625vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-center img {
+  width: 18.625vw;
+}
+.slick-center .item__price {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+  -webkit-text-stroke: 1px #ffffff;
+}
+.slick-center .item1 {
+  border: 3px solid #4392de;
+}
+.slick-center .item2 {
+  border: 3px solid #9028f6;
+}
+.slick-center .item3 {
+  border: 3px solid #f800f6;
+}
+.slick-center .item4 {
+  border: 3px solid #f5002a;
+}
+.slick-center .item5 {
+  border: 3px solid #f8cb15;
+}
+.item__name {
+  padding-top: 1.042vw;
+  font-size: 1.354vw;
+  letter-spacing: 2.5%;
+}
+.item__price {
+  padding-top: 1.042vw;
+  /* font-style: italic; */
+  font-size: 1.875vw;
+}
+.item__price1 {
+  text-shadow: 2px 4px 4px #4392de;
+  color: #4392de;
+}
+.item__price2 {
+  text-shadow: 2px 4px 4px #9028f6;
+  color: #9028f6;
+}
+.item__price3 {
+  text-shadow: 2px 4px 4px #f800f6;
+  color: #f800f6;
+}
+.item__price4 {
+  text-shadow: 2px 4px 4px #f5002a;
+  color: #f5002a;
+}
+.item__price5 {
+  text-shadow: 2px 4px 4px #f8cb15;
+  color: #f8cb15;
+}
 /* CASES */
 .cases {
   background: no-repeat url("../assets/img/bg2.png");
@@ -399,13 +488,13 @@ export default {
   -webkit-background-size: cover;
   position: relative;
 }
-.cassesCont{
-    background-color: #281F27;
-    padding: 30px 15px;
-    border-radius: 15px;  
-    margin-left: 15px;
-    margin-right: 15px;    
-    margin-top:-2vw;  
+.cassesCont {
+  background-color: #281f27;
+  padding: 30px 15px;
+  border-radius: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -2vw;
 }
 .cases:after {
   content: "";
@@ -449,103 +538,113 @@ export default {
 }
 
 /* CLASSIC */
-.cases__classic{
-    margin-top: 5vw;
+.cases__classic {
+  margin-top: 5vw;
 }
 
-.classic__case{
-    display: flex;
-    flex-direction: column;    
+.classic__case {
+  display: flex;
+  flex-direction: column;
 }
-.classic__img{
-    width: 15.625vw; 
-    margin-left: auto;
-    margin-right: auto;
+.classic__img {
+  width: 15.625vw;
+  margin-left: auto;
+  margin-right: auto;
 }
-.sliderClassikCont{
-    position: relative;
-    margin-top: 4.167vw;
+.sliderClassikCont {
+  position: relative;
+  margin-top: 4.167vw;
 }
-.sliderClassik{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+.sliderClassik {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.casesLeft{
-    position: absolute;
-    width: 5.729vw;
-    left: 10px;
-    top: 30%;
-    cursor: pointer;
+.casesLeft {
+  position: absolute;
+  width: 5.729vw;
+  left: 10px;
+  top: 30%;
+  cursor: pointer;
 }
-.casesRight{
-    position: absolute;
-    width: 5.729vw;
-    right: 10px;
-    top: 30%;
-    cursor: pointer;
+.casesRight {
+  position: absolute;
+  width: 5.729vw;
+  right: 10px;
+  top: 30%;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 480px){
-.inner{
-    padding-top: 17.19vw;    
-}
-.live__images{
+@media screen and (max-width: 480px) {
+    .caseName{
+        font-size:5vw;
+    }
+    .casePrice{
+        font-size:6vw;
+    }
+  hr {
+    border: 1px solid #ffffff;
+  }
+  .inner {
+    padding-top: 17.19vw;
+  }
+  .live__images {
     width: 13.292vw;
-}   
-.item{
+  }
+  .item {
+      width:27vw;
     margin-top: 2vw;
     /* border-top: 1px solid rgba(0,0,0,0); */
-    border-bottom: 1px solid #F6F6F6;
+    border-bottom: 1px solid #f6f6f6;
     padding-top: 2vw;
-}
-.item__img{
+  }
+  .item__img {
     width: 24.625vw;
-}
-.item__name{
+  }
+  .item__name {
     font-size: 3.354vw;
-}
-.item__price{
-    font-size: 2.875vw;    
-}
-.classic__img{
+  }
+  .item__price {
+    font-size: 2.875vw;
+  }
+  .classic__img {
     width: 22vw;
-}
-.cases__desc{
+  }
+  .cases__desc {
     font-size: 12px;
-}
-.cases__price{
+  }
+  .cases__price {
     font-size: 3.5vw;
-}
-.cases__popular__content img{
+  }
+  .cases__popular__content img {
     width: 27vw !important;
-}
-.cases__popular{
+  }
+  .cases__popular {
     flex-wrap: wrap;
-}
-.rel__text img{
+  }
+  .rel__text img {
     width: 5vw;
-}
-.stock__text{
+  }
+  .stock__text {
     font-size: 5vw;
-}
-.cases__avatar img{
+  }
+  .cases__avatar img {
     width: 5vw !important;
-}
+  }
 
-.classicCases{
+  .classicCases {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     margin-top: 3vw;
-}
-.casesclasivNav{
+  }
+  .casesclasivNav {
     flex-direction: column;
-}
-.rel__text img{
+    font-size: 4.56vw;
+  }
+  .rel__text img {
     width: 76vw;
+  }
 }
-}
-
 </style>

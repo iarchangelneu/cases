@@ -82,9 +82,7 @@
                 <p class="money__text mt">
                   3. Введите сумму, на которую Вы хотите пополнить личный счет,
                   и нажмите на кнопку “Пополнить”. Вы будете переадресованы на
-                  сайт платежной системы, где сможете завершить платеж. Комиссия
-                  взимается в соответствии с тарифами выбранной платежной
-                  системы.
+                  сайт платежной системы.
                 </p>
               </div>
             </div>
@@ -149,11 +147,6 @@ export default {
   width: 13.54vw;
   margin-right: 1.77vw;
 }
-.money__complete {
-  display: flex;
-  padding-left: 7.40vw;
-  padding-bottom: 8.44vw;
-}
 .mt {
   margin-top: 2.50vw;
 }
@@ -175,7 +168,7 @@ input[type="checkbox"] {
   color: #fff;
 }
 .money__text__block {
-  margin-top: 3.65vw;
+  margin-top: 0.65vw;
 }
 .type__img__one {
   border: 3px solid #f7f7f7;
@@ -217,7 +210,7 @@ input[type="checkbox"] {
 }
 .money__text {
   font-weight: 500;
-  font-size: 1.56vw;
+  font-size: 1.26vw;
   color: #fff;
 }
 .money__system {
@@ -227,16 +220,16 @@ input[type="checkbox"] {
 }
 .system__main {
   font-weight: 700;
-  font-size: 1.56vw;
+  font-size: 1.26vw;
   color: #fff;
 }
 .money__type {
 }
 .money__main {
   font-weight: 700;
-  font-size: 2.29vw;
+  font-size: 1.5vw;
   text-align: center;
-  padding-top: 2.81vw;
+  padding-top: 0.81vw;
   color: #fff;
 }
 .modal-dialog {
