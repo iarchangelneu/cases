@@ -91,7 +91,7 @@ export default {
       if(window.scrollY > 50){
         header.style.backgroundColor = 'rgba(32, 32, 37, 0.9)';
         header.style.paddingTop = '1vw';
-        header.style.paddingBottom = '1vw';
+        // header.style.paddingBottom = '0.1vw';
 
       }
       else{
@@ -199,7 +199,7 @@ export default {
   justify-content: space-between;
 }
 .logo__img {
-  width: 10.26vw;
+  width: 9.26vw;
 }
 .navbar__btn:hover {
   background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
