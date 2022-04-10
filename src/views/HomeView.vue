@@ -307,6 +307,9 @@ hr {
   text-align: center;
 }
 @media screen and (max-width: 480px) {
+  .slct{
+    bottom:7.9% !important;
+  }
   .stock__desc,
   .stock__desc2 {
     font-size: 2.67vw;
