@@ -1,5 +1,5 @@
 <template>
-  <div class="stock" style="overflow-x: hidden">
+  <div class="stock" style="overflow-x: hidden; overflow-y:hidden">
     <div class="slider__arrows">
       <img src="@/assets/img/leftar.png" class="casesLeft" @click="Prev" />
       <img src="@/assets/img/rightar.png" class="casesRight" @click="Next" />
@@ -266,6 +266,7 @@ export default {
 .stock {
   -webkit-background-size: cover;
   position: relative;
+  height: 50.2vw !important;
 }
 .stock:after {
   content: "";
@@ -307,8 +308,8 @@ hr {
   text-align: center;
 }
 @media screen and (max-width: 480px) {
-  .slct{
-    bottom:7.9% !important;
+  .stock{
+    height: 67.2vw !important;
   }
   .stock__desc,
   .stock__desc2 {

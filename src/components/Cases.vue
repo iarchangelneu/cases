@@ -191,7 +191,7 @@ export default {
     grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 25px;
     grid-row-gap: 25px;
-    margin-top: 3vw;
+    margin-top: 1vw;
 }
 .casesclasivNav{
     display: flex;
@@ -404,7 +404,8 @@ export default {
     padding: 30px 15px;
     border-radius: 15px;  
     margin-left: 15px;
-    margin-right: 15px;      
+    margin-right: 15px;    
+    margin-top:-2vw;  
 }
 .cases:after {
   content: "";
@@ -449,7 +450,7 @@ export default {
 
 /* CLASSIC */
 .cases__classic{
-    margin-bottom: 9.896vw;
+    margin-top: 5vw;
 }
 
 .classic__case{
