@@ -11,11 +11,11 @@
                 <div class="row">
                     <div class="col-md-12 col-12">
                         <div class="productModal__name">
-                                {{product.name}} | Gamma Doppler Emerald
+                                {{product.full_type}} | {{product.name}}
                         </div> 
                     </div>
                     <div class="col-md-12 col-12">
-                        <img src="@/assets/img/cataloitem_1.png" alt="" class="productModal__img">    
+                        <img :src="'/data/'+ product.item_model_id" alt="" class="productModal__img">    
                     </div>
                     <div class="col-md-12 col-12">
 
@@ -27,7 +27,7 @@
                                         Float
                                     </span>
                                     <span>
-                                        0.07673785
+                                        {{product.gun_float}}
                                     </span>
                                 </div>
                                 <div class="productModal__row productModal__tableCenter">
@@ -35,7 +35,7 @@
                                         Редкость
                                     </span>
                                     <span>
-                                        Тайное
+                                        {{product.rarity}}
                                     </span>
                                 </div>
                                 <div class="productModal__row">
@@ -43,7 +43,7 @@
                                         Паттерн
                                     </span>
                                     <span>
-                                        908
+                                        {{product.pattern}}
                                     </span>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                     В КОРЗИНУ
                                 </button>
                                 <span class="productModal__price">
-                                    25237.27 ₸
+                                    {{ Math.floor(product.cost) }} ₸
                                 </span>
                             </div>
                         </div>    
@@ -90,6 +90,9 @@ export default {
 </script>
 
 <style scoped>
+.modal-body{
+    margin-top: unset;
+}
 .modal-dialog{
     min-width: 29.32vw;    
 }
