@@ -91,22 +91,22 @@
                 <div class="col-12 col-md-12 catalog">
                     <!-- <div class="row"> -->
                         <!-- <div class="col-2" > -->
-                            <div class="item" v-for="item in filteredWeapons" :key="item.id" @click="openModal(item.id)">
+                            <div class="item" v-for="item in filteredWeapons" :key="item.id" @click="openModal(item._id['$oid'])">
                                 <div class="item__top">
                                     <div class="d-flex flex-column">
                                         <div class="item__rare">
                                             {{item.rarity}}
                                         </div>
                                         <span class="item__price">
-                                            {{item.price}} ₸
+                                            {{Math.floor(item.cost)}} ₸
                                         </span>
                                     </div>
-                                    <div>FN</div>
+                                    <div>{{item.quality}}</div>
                                 </div>
-                                <img :src="item.img" class="item__img" alt="">
+                                <img :src="'/data/'+item.item_model_id" class="item__img" alt="">
                                 <div class="item__bottom">
                                     <span class="item__name">
-                                        {{item.name}}
+                                        {{item.full_type}}
                                     </span>
                                 </div>
                                 <div class="item__more">
@@ -136,7 +136,7 @@ export default {
             sort: 'По умолчанию',
             rarityList:[
                 {id: 0, rare: 'Любое'},
-                {id: 1, rare: 'Армейское'},
+                {id: 1, rare: 'Армейское качество'},
                 {id: 2, rare: 'Запрещенное'},
                 {id: 3, rare: 'Засекреченное'},
                 {id: 4, rare: 'Тайное'},
@@ -150,101 +150,102 @@ export default {
                 {id: 4, cond: 'Well-Worn', short: 'WW', float: 0.6},
                 {id: 5, cond: 'Battle-Scarred', short: 'BS', float: 0.8},
             ],
-            weapons: [
-                {
-                    id: 0,
-                    img: require('../assets/img/cataloitem_1.png'),
-                    rarity: 'Армейское',
-                    name: 'Karambit',
-                    pattern: 908,
-                    price: 1000,
-                    float: 0.5,
-                    collection: 'Red',
-                },
-                {
-                    id: 1,
-                    img: require('../assets/img/tacti__cart.png'),
-                    rarity: 'Запрещенное',
-                    name: 'AK-47',
-                    pattern: 908,
-                    price: 2500,
-                    float: 0.3,
-                    collection: 'Red-Line',
-                },
-                {
-                    id: 2,
-                    img: require('../assets/img/voi__cart.png'),
-                    rarity: 'Засекреченное',
-                    name: 'USP',
-                    pattern: 908,
-                    price: 7000,
-                    float: 0.7,
-                    collection: 'Dark',
-                },
-                {
-                    id: 3,
-                    img: require('../assets/img/cataloitem_1.png'),
-                    rarity: 'Тайное',
-                    name: 'AWP',
-                    pattern: 908,
-                    price: 25000,
-                    float: 0.79,
-                    collection: 'Dragon Lore',
-                },
-                {
-                    id: 4,
-                    img: require('../assets/img/cataloitem_1.png'),
-                    rarity: 'Армейское',
-                    name: 'Karambit',
-                    pattern: 908,
-                    price: 55000,
-                    float: 0.1,
-                    collection: 'Red',
-                },
-                {
-                    id: 5,
-                    img: require('../assets/img/cataloitem_1.png'),
-                    rarity: 'Запрещенное',
-                    name: 'AK-47',
-                    pattern: 908,
-                    price: 35000,
-                    float: 0.2,
-                    collection: 'Red-Line',
-                },
-                {
-                    id: 6,
-                    img: require('../assets/img/cataloitem_1.png'),
-                    rarity: 'Засекреченное',
-                    name: 'USP',
-                    pattern: 908,
-                    price: 255000,
-                    float: 0.45,
-                    collection: 'Dark',
-                },
-                {
-                    id: 7,
-                    img: require('../assets/img/cataloitem_1.png'),
-                    rarity: 'Тайное',
-                    name: 'AWP',
-                    pattern: 908,
-                    price: 152487,
-                    float: 0.14,
-                    collection: 'Dragon Lore',
-                },
-                {
-                    id: 8,
-                    img: require('../assets/img/cataloitem_1.png'),
-                    rarity: 'Тайное',
-                    name: 'AWP',
-                    pattern: 908,
-                    price: 16000,
-                    float: 0.34,
-                    collection: 'Dragon Lore',
+            weapons: [],
+            // weapons: [
+            //     {
+            //         id: 0,
+            //         img: require('../assets/img/cataloitem_1.png'),
+            //         rarity: 'Армейское',
+            //         name: 'Karambit',
+            //         pattern: 908,
+            //         price: 1000,
+            //         float: 0.5,
+            //         collection: 'Red',
+            //     },
+            //     {
+            //         id: 1,
+            //         img: require('../assets/img/tacti__cart.png'),
+            //         rarity: 'Запрещенное',
+            //         name: 'AK-47',
+            //         pattern: 908,
+            //         price: 2500,
+            //         float: 0.3,
+            //         collection: 'Red-Line',
+            //     },
+            //     {
+            //         id: 2,
+            //         img: require('../assets/img/voi__cart.png'),
+            //         rarity: 'Засекреченное',
+            //         name: 'USP',
+            //         pattern: 908,
+            //         price: 7000,
+            //         float: 0.7,
+            //         collection: 'Dark',
+            //     },
+            //     {
+            //         id: 3,
+            //         img: require('../assets/img/cataloitem_1.png'),
+            //         rarity: 'Тайное',
+            //         name: 'AWP',
+            //         pattern: 908,
+            //         price: 25000,
+            //         float: 0.79,
+            //         collection: 'Dragon Lore',
+            //     },
+            //     {
+            //         id: 4,
+            //         img: require('../assets/img/cataloitem_1.png'),
+            //         rarity: 'Армейское',
+            //         name: 'Karambit',
+            //         pattern: 908,
+            //         price: 55000,
+            //         float: 0.1,
+            //         collection: 'Red',
+            //     },
+            //     {
+            //         id: 5,
+            //         img: require('../assets/img/cataloitem_1.png'),
+            //         rarity: 'Запрещенное',
+            //         name: 'AK-47',
+            //         pattern: 908,
+            //         price: 35000,
+            //         float: 0.2,
+            //         collection: 'Red-Line',
+            //     },
+            //     {
+            //         id: 6,
+            //         img: require('../assets/img/cataloitem_1.png'),
+            //         rarity: 'Засекреченное',
+            //         name: 'USP',
+            //         pattern: 908,
+            //         price: 255000,
+            //         float: 0.45,
+            //         collection: 'Dark',
+            //     },
+            //     {
+            //         id: 7,
+            //         img: require('../assets/img/cataloitem_1.png'),
+            //         rarity: 'Тайное',
+            //         name: 'AWP',
+            //         pattern: 908,
+            //         price: 152487,
+            //         float: 0.14,
+            //         collection: 'Dragon Lore',
+            //     },
+            //     {
+            //         id: 8,
+            //         img: require('../assets/img/cataloitem_1.png'),
+            //         rarity: 'Тайное',
+            //         name: 'AWP',
+            //         pattern: 908,
+            //         price: 16000,
+            //         float: 0.34,
+            //         collection: 'Dragon Lore',
 
-                },
+            //     },
                 
                 
-            ],
+            // ],
             search: '',
             lowprice: '',
             highprice: '',
@@ -255,13 +256,20 @@ export default {
     
     methods:{
         getData(){
-            fetch('https://pokeapi.co/api/v2/pokemon/?limit=100&offset=10').then(response => response.json()).then(result => {this.pokemons = result.results
-            console.log(result)
-            });
+            const path = 'https://realcases.kz/api/shop';
+            axios.get(path)
+                .then((res) => {
+                    this.weapons = res.data;
+                console.log(res.data[0]);
+                })
+                .catch((error) => {
+                // eslint-выключение следующей строки
+                console.error(error);
+                });
         },
         openModal(id){
-            console.log(this.weapons.filter(item => item.id == id)[0].name)
-            this.modal.modalProductName = this.weapons.filter(item => item.id == id)[0];
+            // console.log(this.weapons.filter(item => item.id == id)[0].name)
+            this.modal.modalProductName = this.weapons.filter(item => item._id['$oid'] == id)[0];
             $('#ProductModal').modal('show')
         },
         reloadCatalog(){
@@ -284,15 +292,15 @@ export default {
         filteredWeapons(){
             let searched = this.weapons.filter((product) => {
                 if(this.lowprice === ''){
-                    return product.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1
+                    return product.full_type.toLowerCase().indexOf(this.search.toLowerCase()) !== -1
                 }
                 else{
-                    return product.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 && product.price>this.lowprice;
+                    return product.full_type.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 && product.cost>this.lowprice;
                 }
             });
             if(this.highprice !== ''){
                 searched = searched.filter((product) => {
-                    return product.price <= Number(this.highprice)    
+                    return product.cost <= Number(this.highprice)    
                 })
             };
             if(this.rareSelect != 0){
@@ -302,18 +310,18 @@ export default {
             }
             if(this.conditionSelect != 0){
                 searched = searched.filter(product => {
-                    return product.float >= (this.conditionList[this.conditionSelect].float)  && product.float <= (this.conditionList[this.conditionSelect+1].float)    
+                    return product.quality == (this.conditionList[this.conditionSelect].short)    
                 })    
             }
             if(this.sort==='По цене (Min)'){
                 searched.sort((a,b)=>{
-                    return a.price - b.price
+                    return a.cost - b.cost
                 })    
             }
             if(this.sort==='По цене (Max)')
             {
                 searched.sort((a,b)=>{
-                    return b.price - a.price
+                    return b.cost - a.cost
                 })    
             }
             return searched
@@ -581,6 +589,7 @@ export default {
         border-radius: 5px;
         height: fit-content;
         box-shadow: 2px 4px 10px #00000040;
+        height: auto;
     }
     .item__top{
         /* position: relative; */
