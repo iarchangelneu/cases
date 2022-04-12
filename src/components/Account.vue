@@ -18,7 +18,7 @@
               class="user__ava"
             />
             <div class="user__name__data">
-              <p class="user__name">IlyuhaTopCSer</p>
+              <p class="user__name">{{USER_NAME}}</p>
               <a href="#"
                 ><img
                   src="../assets/img/user__steam.svg"
@@ -133,7 +133,7 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   computed:{
-     ...mapGetters(["IsLogged", "USER_NAME"])
+     ...mapGetters(['IsLogged', 'USER_NAME'])
   }
 };
 </script>
