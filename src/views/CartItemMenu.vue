@@ -8,20 +8,20 @@
     :cart_item_data="item"
     @deleteCart="deleteCart(i)"
     >
-      <div class="cart__product">
+     <div class="cart__product">
         <img
-          :src="item.img"
+          :src="'/data/'+item.item_model_id"
           alt=""
           style="width: 8.96vw"
           class="cart__productIMG"
         />
         <div class="product__desc">
-          <p class="product__name">{{ item.name }} {{ item.collection }}</p>
+          <p class="product__name">{{ item.full_type }} {{ item.name }}</p>
           <p class="product__text">{{ item.rarity }}</p>
-          <p class="product__text">{{ item.float }}</p>
+          <p class="product__text">{{ item.quality }}</p>
         </div>
         <div class="product__price">
-          <p class="product__count">{{ item.price }} ₸</p>
+          <p class="product__count">{{ Math.floor(item.cost) }} ₸</p>
         </div>
         <div class="product__close">
           <img

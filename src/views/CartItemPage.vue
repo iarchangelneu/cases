@@ -8,18 +8,13 @@
       @deleteCart="deleteCart(i)"
     >
       <div class="product__content">
-        <img
-          :src="item.img"
-          alt=""
-          style="width: 16.46vw"
-          class="product__img"
-        />
+        <img :src="'/data/'+item.item_model_id" alt="" style="width: 16.46vw" />
         <div class="product__desc">
           <p class="product__name">{{ item.name }} {{ item.collection }}</p>
           <p class="product__text">{{ item.rarity }}</p>
           <p class="product__text">{{ item.float }}</p>
         </div>
-        <p class="product__total">{{ item.price }} ₸</p>
+        <p class="product__total">{{ Math.floor(item.cost) }} ₸</p>
         <div class="product__close">
           <img
             src="../assets/img/close.svg"

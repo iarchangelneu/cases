@@ -111,7 +111,7 @@ export default {
       ...mapGetters(['CART_PLS','USER_NAME']),
       cartSum(){
         return this.CART_PLS.reduce(
-          (previousValue, currentValue) => previousValue + currentValue.price,
+          (previousValue, currentValue) => previousValue + Math.floor(currentValue.cost),
           0
         )
       }

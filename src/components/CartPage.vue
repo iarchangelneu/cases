@@ -48,7 +48,7 @@ export default {
     cartSum() {
       console.log(this.CART_PLS);
       return this.CART_PLS.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.price,
+        (previousValue, currentValue) => previousValue + Math.floor(currentValue.cost),
         0
       );
     },
