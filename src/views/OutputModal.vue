@@ -26,14 +26,14 @@
         <div class="modal-body">
           <div class="money__system">
             <div class="warning">
-              <img src="../assets/img/warning.svg" alt="" style="width: 2.08vw; margin-right:0.26vw" />
+              <img src="../assets/img/warning.svg" alt="" style="width: 1.4vw; margin-right:0.26vw" />
               <p class="warning__text">
                 В случае указание неправильного номера кошелька средства не
                 возвращаются.
               </p>
             </div>
             <div class="warning">
-              <img src="../assets/img/warning.svg" alt="" style="width: 2.08vw; margin-right:0.26vw" />
+              <img src="../assets/img/warning.svg" alt="" style="width: 1.4vw; margin-right:0.26vw" />
               <p class="warning__text">
                 Процесс обработки заявки обычно занимает меньше часа, но может
                 занять до 3-х рабочих дней.
@@ -134,13 +134,16 @@ export default {
 </script>
 
 <style scpoed>
+.modal-body{
+  margin-top: -3.5vw;
+}
 .warning{
     display: flex;
     align-items: flex-start
 }
 .warning__text {
   font-weight: 500;
-  font-size: 1.56vw;
+  font-size: 1vw;
   color: #fff;
 }
 .complete__btn {
@@ -170,7 +173,7 @@ border-radius: 1.56vw;
 .money__complete {
   display: flex;
   padding-left: 7.40vw;
-  padding-bottom: 8.44vw;
+  padding-bottom: 1.44vw;
 }
 .mt {
   margin-top: 2.50vw;
@@ -191,9 +194,6 @@ input[type="checkbox"] {
 .money__label a {
   text-decoration: underline;
   color: #fff;
-}
-.money__text__block {
-  margin-top: 3.65vw;
 }
 .type__img__one {
   border: 3px solid #f7f7f7;
@@ -233,20 +233,10 @@ input[type="checkbox"] {
   display: flex;
   margin-top: 2.08vw;
 }
-.money__text {
-  font-weight: 500;
-  font-size: 1.56vw;
-  color: #fff;
-}
 .money__system {
   margin-top: 3.65vw;
   padding-left: 7.50vw;
   padding-right: 5.26vw;
-}
-.system__main {
-  font-weight: 700;
-  font-size: 1.56vw;
-  color: #fff;
 }
 .money__active {
   border-bottom: 3px solid #ffffff;
@@ -261,11 +251,12 @@ input[type="checkbox"] {
   background: #171717;
   border-radius: 0.63vw;
   padding-left: 3.33vw;
-  padding-top: 1.72vw;
-  padding-bottom: 1.72vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
   justify-content: space-evenly
 }
 .money__btn {
+  z-index:4;
   padding:0.99vw 0.78vw 0.99vw 0.78vw;
   display: flex;
   background: transparent;
@@ -277,15 +268,6 @@ input[type="checkbox"] {
   color: #fff;
   margin-right: 2.24vw;
   align-items: flex-end;
-}
-.money__type {
-}
-.money__main {
-  font-weight: 700;
-  font-size: 2.29vw;
-  text-align: center;
-  padding-top: 2.81vw;
-  color: #fff;
 }
 .modal-dialog {
   min-width: 89.32vw;

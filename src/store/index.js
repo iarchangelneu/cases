@@ -28,6 +28,7 @@ export default createStore({
     AddToCart({commit}, product){
       commit('SETCART', product)
       this.commit('saveCart');
+      $('#ProductModal').modal('hide')
     },
     DeleteFromCart({commit}, i){
       commit('RemoveCart', i)
