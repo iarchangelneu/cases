@@ -18,35 +18,35 @@
       />
       <div class="rarItems">
         <div class="">
-          <div class="item item4">
+          <div class="item item4" @click="tryToBuy">
             <img src="@/assets/img/casesRar1.png" alt="" class="item__img" />
             <span class="item__name">Тайное</span>
             <span class="item__price item__price4">999 ₸</span>
           </div>
         </div>
         <div class="">
-          <div class="item item5">
+          <div class="item item5" @click="tryToBuy">
             <img src="@/assets/img/casesRar2.png" alt="" class="item__img" />
             <span class="item__name">Нож</span>
             <span class="item__price item__price5">11499 ₸</span>
           </div>
         </div>
         <div class="">
-          <div class="item item1">
+          <div class="item item1" @click="tryToBuy">
             <img src="@/assets/img/casesRar5.png" alt="" class="item__img" />
             <span class="item__name">Армейское</span>
             <span class="item__price item__price1">45 ₸</span>
           </div>
         </div>
         <div class="">
-          <div class="item item2">
+          <div class="item item2" @click="tryToBuy">
             <img src="@/assets/img/casesRar4.png" alt="" class="item__img" />
             <span class="item__name">Запрещенное</span>
             <span class="item__price item__price2">145 ₸</span>
           </div>
         </div>
         <div class="">
-          <div class="item item3">
+          <div class="item item3" @click="tryToBuy">
             <img src="@/assets/img/casesRar3.png" alt="" class="item__img" />
             <span class="item__name">Засекреченное</span>
             <span class="item__price item__price3">345 ₸</span>
@@ -101,26 +101,26 @@
         </div>
       </div>
       <div class="classicCases" v-if="activeTab == 'New'">
-        <div class="case" v-for="cs in cases" :key="cs">
-          <img src="@/assets/img/caseImg.png" alt="" class="caseIm" />
-          <div class="caseName">Alpha</div>
-          <div class="casePrice">29 ₸</div>
+        <div class="case" v-for="cs in newcases" :key="cs" @click="tryToBuy">
+          <img :src="'/data/'+cs.link" alt="" class="caseIm" />
+          <div class="caseName">{{cs.name}}</div>
+          <div class="casePrice">{{Math.floor(cs.cost)}} ₸</div>
         </div>
       </div>
 
       <div class="classicCases" v-if="activeTab == 'Classik'">
-        <div class="case" v-for="cs in cases" :key="cs">
-          <img src="@/assets/img/caseImg.png" alt="" class="caseIm" />
-          <div class="caseName">Chroma</div>
-          <div class="casePrice">29 ₸</div>
+        <div class="case" v-for="cs in cases" :key="cs" @click="tryToBuy">
+          <img :src="'/data/'+cs.link" alt="" class="caseIm" />
+          <div class="caseName">{{cs.name}}</div>
+          <div class="casePrice">{{Math.floor(cs.cost)}} ₸</div>
         </div>
       </div>
 
       <div class="classicCases" v-if="activeTab == 'Sale'">
-        <div class="case" v-for="cs in cases" :key="cs">
-          <img src="@/assets/img/caseImg.png" alt="" class="caseIm" />
-          <div class="caseName">Gama</div>
-          <div class="casePrice">29 ₸</div>
+        <div class="case" v-for="cs in salecases" :key="cs" @click="tryToBuy">
+          <img :src="'/data/'+cs.link" alt="" class="caseIm" />
+          <div class="caseName">{{cs.name}}</div>
+          <div class="casePrice">{{Math.floor(cs.cost)}} ₸</div>
         </div>
       </div>
     </div>
@@ -131,112 +131,35 @@
 export default {
   data() {
     return {
-      cases: [
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа",
-          price: "145",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа",
-          price: "145",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-        {
-          img: "../assets/img/homeless__case.png",
-          name: "Кейс бомжа2",
-          price: "300",
-        },
-      ],
+      cases: [],
+      newcases:[],
+      salecases: [],
       activeTab: "Classik",
     };
   },
   methods: {
+     getCases() {
+      const path = "https://realcases.kz/api/cases";
+      axios
+        .get(path)
+        .then((res) => {
+          for(let i=31; i<51;i++){
+              this.newcases.push(res.data[i])
+          }
+          for(let i=91; i<111;i++){
+              this.cases.push(res.data[i])
+          }
+          for(let i=51; i<71;i++){
+              this.salecases.push(res.data[i])
+          }
+          // this.cases = res.data;
+          console.log(res);
+          console.log(this.cases);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
     classicPrev() {
       $(".sliderClassik").slick("slickPrev");
     },
@@ -266,7 +189,10 @@ export default {
         },
       ],
     });
+    this.getCases();
+    
   },
+  
 };
 </script>
 

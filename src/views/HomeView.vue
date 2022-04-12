@@ -28,7 +28,7 @@
           <img src="../assets/img/2sltext.png" alt="" style="width: 33.65vw" />
           <p class="stock__desc22">За каждые 5 открытий</p>
           <div class="stock__button2">
-            <button class="stock__btn">Получить бонус!</button>
+            <button class="stock__btn" @click="tryToBuy">Получить бонус!</button>
           </div>
         </div>
       </div>
@@ -44,23 +44,30 @@
         />
         <div class="cases__popular">
           <div class="cases__popular__content">
-            <div style="margin-right: 3.59vw">
+             <a href="/cases" class="linkwithout">
+            <div style="margin-right: 3.59vw" router-link to="cases">
               <img src="../assets/img/glhf.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">GL HF</p>
               <p class="cases__price">145 ₸</p>
             </div>
+             </a>
+            <a href="/cases" class="linkwithout">
             <div>
               <img src="../assets/img/hs.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">Head Shot</p>
               <p class="cases__price">145 ₸</p>
             </div>
+            </a>
           </div>
           <div class="cases__popular__content">
+            <a href="/cases" class="linkwithout">
             <div style="margin-right: 3.59vw">
               <img src="../assets/img/ez.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">EZ case</p>
               <p class="cases__price">145 ₸</p>
             </div>
+             </a>
+            <a href="/cases" class="linkwithout">
             <div>
               <img
                 src="../assets/img/spring.png"
@@ -70,8 +77,10 @@
               <p class="cases__desc">Весенний</p>
               <p class="cases__price">145 ₸</p>
             </div>
+            </a>
           </div>
           <div class="cases__popular__content">
+            <a href="/cases" class="linkwithout">
             <div>
               <img
                 src="../assets/img/violet.png"
@@ -81,6 +90,7 @@
               <p class="cases__desc">Ультрафиолет</p>
               <p class="cases__price">145 ₸</p>
             </div>
+            </a>
           </div>
         </div>
       </div>
@@ -92,35 +102,45 @@
         />
         <div class="cases__popular cases_p">
           <div class="cases__popular__content">
-            <div style="margin-right: 3.59vw">
+            <a href="/shop" class="linkwithout">
+              <div style="margin-right: 3.59vw">
               <img src="../assets/img/revo.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">REVOLVER R8</p>
               <p class="cases__price">145 ₸</p>
             </div>
+            </a>
+            <a href="/shop" class="linkwithout">
             <div>
               <img src="../assets/img/de.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">DESERT EAGLE</p>
               <p class="cases__price">145 ₸</p>
             </div>
+            </a>
           </div>
           <div class="cases__popular__content">
+            <a href="/shop" class="linkwithout">
             <div style="margin-right: 3.59vw">
               <img src="../assets/img/ak.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">AK-47</p>
               <p class="cases__price">145 ₸</p>
             </div>
+            </a>
+            <a href="/shop" class="linkwithout">
             <div>
               <img src="../assets/img/mac.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">MAC-10</p>
               <p class="cases__price">145 ₸</p>
             </div>
+            </a>
           </div>
           <div class="cases__popular__content">
+            <a href="/shop" class="linkwithout">
             <div>
               <img src="../assets/img/m4.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">M4A4</p>
               <p class="cases__price">145 ₸</p>
             </div>
+            </a>
           </div>
         </div>
       </div>
@@ -163,6 +183,10 @@ export default {
 };
 </script>
 <style scoped>
+.linkwithout{
+  outline: none;
+  text-decoration: none;
+}
 .slct {
   position: absolute;
   left: 45%;

@@ -109,13 +109,7 @@ export default {
     usersOnline() {
       let curDate = new Date();
       return (
-        5000 +
-        Math.floor(
-          (Date.parse(curDate) - Date.parse("2022-04-03T13:51:50.417-07:00")) /
-            60 /
-            60 /
-            24
-        )
+        Math.floor(7000 + Math.random() * (2000 - 1) + 1)
       );
     },
   },
