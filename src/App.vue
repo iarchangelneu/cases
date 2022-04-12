@@ -269,11 +269,7 @@ export default {
 }
 .modal__signin {
   border: 0;
-<<<<<<< HEAD
-  background: linear-gradient(235.92deg, #c62c44 14.85%, #ff0027 87.62%);
-=======
   background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
->>>>>>> 74f26b68a5161a9f81804f11a12886fee69a4fcb
   border-radius: 0.63vw;
   padding: 0.78vw 1.41vw 0.78vw 1.41vw;
   font-weight: 700;
