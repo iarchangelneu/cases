@@ -91,22 +91,22 @@
                 <div class="col-12 col-md-12 catalog">
                     <!-- <div class="row"> -->
                         <!-- <div class="col-2" > -->
-                            <div class="item" v-for="item in filteredWeapons" :key="item.id" @click="openModal(item.id)">
+                            <div class="item" v-for="item in filteredWeapons" :key="item.id" @click="openModal(item._id['$oid'])">
                                 <div class="item__top">
                                     <div class="d-flex flex-column">
                                         <div class="item__rare">
                                             {{item.rarity}}
                                         </div>
                                         <span class="item__price">
-                                            {{item.price}} ₸
+                                            {{Math.floor(item.cost)}} ₸
                                         </span>
                                     </div>
-                                    <div>FN</div>
+                                    <div>{{item.quality}}</div>
                                 </div>
-                                <img :src="item.img" class="item__img" alt="">
+                                <img :src="'/data/'+item.item_model_id" class="item__img" alt="">
                                 <div class="item__bottom">
                                     <span class="item__name">
-                                        {{item.name}}
+                                        {{item.full_type}}
                                     </span>
                                 </div>
                                 <div class="item__more">
@@ -255,9 +255,16 @@ export default {
     
     methods:{
         getData(){
-            fetch('https://pokeapi.co/api/v2/pokemon/?limit=100&offset=10').then(response => response.json()).then(result => {this.pokemons = result.results
-            console.log(result)
-            });
+            const path = 'https://realcases.kz/api/shop';
+            axios.get(path)
+                .then((res) => {
+                    this.weapons = res.data;
+                console.log(res.data[0]);
+                })
+                .catch((error) => {
+                // eslint-выключение следующей строки
+                console.error(error);
+                });
         },
         openModal(id){
             console.log(this.weapons.filter(item => item.id == id)[0].name)
@@ -284,15 +291,15 @@ export default {
         filteredWeapons(){
             let searched = this.weapons.filter((product) => {
                 if(this.lowprice === ''){
-                    return product.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1
+                    return product.full_type.toLowerCase().indexOf(this.search.toLowerCase()) !== -1
                 }
                 else{
-                    return product.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 && product.price>this.lowprice;
+                    return product.full_type.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 && product.cost>this.lowprice;
                 }
             });
             if(this.highprice !== ''){
                 searched = searched.filter((product) => {
-                    return product.price <= Number(this.highprice)    
+                    return product.cost <= Number(this.highprice)    
                 })
             };
             if(this.rareSelect != 0){
@@ -302,18 +309,18 @@ export default {
             }
             if(this.conditionSelect != 0){
                 searched = searched.filter(product => {
-                    return product.float >= (this.conditionList[this.conditionSelect].float)  && product.float <= (this.conditionList[this.conditionSelect+1].float)    
+                    return product.quality == (this.conditionList[this.conditionSelect].short)    
                 })    
             }
             if(this.sort==='По цене (Min)'){
                 searched.sort((a,b)=>{
-                    return a.price - b.price
+                    return a.cost - b.cost
                 })    
             }
             if(this.sort==='По цене (Max)')
             {
                 searched.sort((a,b)=>{
-                    return b.price - a.price
+                    return b.cost - a.cost
                 })    
             }
             return searched
