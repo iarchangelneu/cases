@@ -1,125 +1,128 @@
 <template>
   <div class="user pl__pr">
     <div class="user__content">
-      <div class="user__info">
-        <button
-          class="user__button left"
-          data-toggle="modal"
-          data-target="#Money"
-        >
-          Пополнить
-        </button>
-        <div class="user__data">
-          <img
-            src="../assets/img/user__ava.png"
-            alt=""
-            style="width: 5vw"
-            class="user__ava"
-          />
-          <div class="user__name__data">
-            <p class="user__name">IlyuhaTopCSer</p>
-            <a href="#"
-              ><img
-                src="../assets/img/user__steam.svg"
-                alt=""
-                style="width: 2.76vw"
-                class="steam__ico"
-            /></a>
+      <div v-if="IsLogged">
+        <div class="user__info">
+          <button
+            class="user__button left"
+            data-toggle="modal"
+            data-target="#Money"
+          >
+            Пополнить
+          </button>
+          <div class="user__data">
+            <img
+              src="../assets/img/user__ava.png"
+              alt=""
+              style="width: 5vw"
+              class="user__ava"
+            />
+            <div class="user__name__data">
+              <p class="user__name">IlyuhaTopCSer</p>
+              <a href="#"
+                ><img
+                  src="../assets/img/user__steam.svg"
+                  alt=""
+                  style="width: 2.76vw"
+                  class="steam__ico"
+              /></a>
+            </div>
+            <p class="user__count">1 ₸</p>
           </div>
-          <p class="user__count">1 ₸</p>
+          <button
+            class="user__button"
+            data-toggle="modal"
+            data-target="#OutputMoney"
+          >
+            Вывод средств
+          </button>
         </div>
-        <button
-          class="user__button"
-          data-toggle="modal"
-          data-target="#OutputMoney"
-        >
-          Вывод средств
-        </button>
-      </div>
-      <div class="user__trade__email pl">
-        <div class="user__tradeblock">
-          <div class="user__labels">
-            <label for="trade" class="user__trade"> Трейд-ссылка</label>
-            <a href="#" class="user__how">Как получить?</a>
+        <div class="user__trade__email pl">
+          <div class="user__tradeblock">
+            <div class="user__labels">
+              <label for="trade" class="user__trade"> Трейд-ссылка</label>
+              <a href="#" class="user__how">Как получить?</a>
+            </div>
+            <img
+              src="../assets/img/user__trade.svg"
+              alt=""
+              style="width: 2.08vw; margin-right: 0.47vw; margin-left: 2vw"
+            /><input
+              type="text"
+              name="trade"
+              id="trade"
+              class="user__input trade"
+              placeholder="https://steamcommunity.com/tradeoffer/new/?partner=969138412&token=NJff8Nnr"
+            />
+            <button class="user__savebtn">Сохранить</button>
           </div>
-          <img
-            src="../assets/img/user__trade.svg"
-            alt=""
-            style="width: 2.08vw; margin-right: 0.47vw; margin-left: 2vw"
-          /><input
-            type="text"
-            name="trade"
-            id="trade"
-            class="user__input trade"
-            placeholder="https://steamcommunity.com/tradeoffer/new/?partner=969138412&token=NJff8Nnr"
-          />
-          <button class="user__savebtn">Сохранить</button>
-        </div>
-        <div class="user__passwordblock">
-          <div>
-            <p class="user__email">Пароль</p>
+          <div class="user__passwordblock">
+            <div>
+              <p class="user__email">Пароль</p>
 
-            <div class="user__flex">
-              <div>
-              <label for="current__password" class="user__password"
-                >Текущий пароль</label
-              ><br />
-              <input
-                type="password"
-                name="current__password"
-                id="current__password"
-                class="user__input all__inputs user__password"
-              />
-              </div>
-              <div class="user__emailblock">
-                <label for="email" class="user__email">E-mail</label><br />
-                <div class="input__flex">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Ваш E-mail"
-                  class="user__input input__email"
-                />
-                <button class="user__savebtn">Изменить</button>
+              <div class="user__flex">
+                <div>
+                  <label for="current__password" class="user__password"
+                    >Текущий пароль</label
+                  ><br />
+                  <input
+                    type="password"
+                    name="current__password"
+                    id="current__password"
+                    class="user__input all__inputs user__password"
+                  />
+                </div>
+                <div class="user__emailblock">
+                  <label for="email" class="user__email">E-mail</label><br />
+                  <div class="input__flex">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Ваш E-mail"
+                      class="user__input input__email"
+                    />
+                    <button class="user__savebtn">Изменить</button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div>
-              <label for="new__password" class="user__password"
-                >Новый пароль</label
-              ><br />
-              <input
-                type="password"
-                name="new__password"
-                id="new__password"
-                class="user__input all__inputs user__password"
+              <div>
+                <label for="new__password" class="user__password"
+                  >Новый пароль</label
+                ><br />
+                <input
+                  type="password"
+                  name="new__password"
+                  id="new__password"
+                  class="user__input all__inputs user__password"
+                />
+              </div>
+
+              <div>
+                <label for="accept__password" class="user__password"
+                  >Подвердите пароль</label
+                ><br />
+                <input
+                  type="password"
+                  name="accept__password"
+                  id="accept__password"
+                  class="user__input all__inputs user__password"
+                />
+              </div>
+              <button class="user__savebtn user__btn">Сменить пароль</button>
+            </div>
+            <div class="user__img">
+              <img
+                src="../assets/img/cheliki.png"
+                alt=""
+                style="width: 27.71vw"
               />
             </div>
-
-            <div>
-              <label for="accept__password" class="user__password"
-                >Подвердите пароль</label
-              ><br />
-              <input
-                type="password"
-                name="accept__password"
-                id="accept__password"
-                class="user__input all__inputs user__password"
-              />
-            </div>
-            <button class="user__savebtn user__btn">Сменить пароль</button>
-          </div>
-          <div class="user__img">
-            <img
-              src="../assets/img/cheliki.png"
-              alt=""
-              style="width: 27.71vw"
-            />
           </div>
         </div>
       </div>
+      <p class="pls__log" v-else>Пожалуйста авторизуйтесь</p>
     </div>
   </div>
   <how-steps style="padding-top: 5.78vw"></how-steps>
@@ -127,21 +130,32 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters, mapActions } from "vuex";
+export default {
+  computed:{
+     ...mapGetters(["IsLogged", "USER_NAME"])
+  }
+};
 </script>
 
 <style scoped>
-.user__img{
+.pls__log {
+  text-align: center;
+  color: #fff;
+  font-size: 5vw;
+  padding-bottom: 1vw;
+}
+.user__img {
   position: absolute;
   right: 0;
 }
-.input__flex{
+.input__flex {
   display: flex;
 }
-.user__trade__email{
-  margin-bottom:4.06vw;
+.user__trade__email {
+  margin-bottom: 4.06vw;
 }
-.user__flex{
+.user__flex {
   display: flex;
 }
 .user__name__data {
@@ -171,13 +185,13 @@ export default {};
   height: 3.39vw;
   margin-right: 1.41vw;
 }
-.input__email{
-width: 25.84vw;
+.input__email {
+  width: 25.84vw;
   height: 3.39vw;
   margin-right: 1.41vw;
 }
 .user__emailblock {
-  margin-left:-0.7vw;
+  margin-left: -0.7vw;
   margin-top: -5.86vw;
 }
 .user__email {

@@ -5,7 +5,7 @@
       <router-link to="/"><img src="../assets/img/header__logo.svg" alt="logo" class="logo__img" /></router-link>
     </div>
     <the-navbar></the-navbar>
-    <div class="navbar" v-if="IsLoggedIn">
+    <div class="navbar" v-if="IsLogged">
       <button class="cart__btn" @click="openHeader()">
           <img
             src="../assets/img/cart.svg"
@@ -19,11 +19,11 @@
         <img src="../assets/img/avatar.svg" alt="" style="width: 3.13vw" class="accountHeaderImgPC" />
         <div class="dropdown">
           <img src="../assets/img/avatar.svg" alt="" style="" class="accountHeaderImgM" />
-          <p class="name">IlyuhaTopCSer</p>
+          <p class="name">{{USER_NAME}}</p>
            <p class="purse__count">0 ₸</p>
           <div class="dropdown-content">
             <a href="/account">Профиль</a>
-            <a @click="IsLoggedIn = false">Выйти</a>
+            <a @click="LogOut">Выйти</a>
           </div>
         </div>
         <div class="purse">
@@ -63,7 +63,7 @@
 
 
 import CartMenu from '../views/CartMenu.vue'
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
   data() {
@@ -74,6 +74,13 @@ export default {
   },
 
   methods: {
+    ...mapActions(["LogOut"]),
+    logOut(){
+      localStorage.setItem("userName", '');
+      localStorage.setItem("userEmail", '');
+      localStorage.setItem("userLoged", '');
+      this.LogOut();
+    },
     openHeader() {
       let sc = $("#cart")[0];
       sc.style.transition = "all 0.8s";
@@ -101,7 +108,7 @@ export default {
     });
   },
   computed:{
-      ...mapGetters(['CART_PLS']),
+      ...mapGetters(['CART_PLS','USER_NAME']),
       cartSum(){
         return this.CART_PLS.reduce(
           (previousValue, currentValue) => previousValue + currentValue.price,

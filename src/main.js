@@ -19,27 +19,83 @@ import MoneyModal from './views/MoneyModal'
 import PaymentError from './views/PaymentError'
 import OutputModal from './views/OutputModal'
 
+import {mapGetters} from 'vuex'
+
 const Mixin = {
     data(){
-        return{
-            IsLoggedIn: true,
-            products: [
-                {
-                    img: require("./assets/img/voi__cart.png"),
-                    name: "M4A4 | Вой",
-                    rare: "Редкость: Тайное",
-                    state: "Состояние: Well-Worm",
-                    price: "32237.27 ₸",
-                  },
-                  {
-                    img: require("./assets/img/tacti__cart.png"),
-                    name: "M4A4 | Вой",
-                    rare: "Редкость: Тайное",
-                    state: "Состояние: Well-Worm",
-                    price: "32237.27 ₸",
-                  },
-           ],
+        return {
+            username: '',
+            password: '',
+            usernameR: '',
+            passwordR: '',
+            emailR: ''
         }
+    },
+    methods: {
+        reg() {
+            const path = "https://realcases.kz/api/register";
+            axios
+                .post(path, { login: this.usernameR, password: this.passwordR, e_mail: this.emailR })
+                .then((res) => {
+                    if(this.usernameR.length == '' && this.passwordR.length == '' && this.emailR.length == ''){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Упс',
+                            text: 'Что-то введено неверно',
+                          })
+                    }
+                    else{
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Успешно',
+                            text: 'Теперь вы можете авторизоваться',
+                          })
+                        console.log(res);
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        },
+        login() {
+
+            const path = "https://realcases.kz/api/login";
+            axios
+                .post(path, { login: this.username, password: this.password })
+                .then((res) => {
+                    if (res.data.success == false) {
+                        Swal.fire({
+                            title: 'Ошибка',
+                            text: 'Данные не верны',
+                            icon: 'error',
+                            confirmButtonText: 'Ок'
+                        })
+                    }
+                    else {
+                        console.log(res)
+                        localStorage.setItem("userName", res.data.login);
+                        localStorage.setItem("userEmail", res.data['e-mail']);
+                        localStorage.setItem("userLoged", true);
+                        window.location = "/account"
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                    console.log('Неверно')
+                });
+        },
+        tryToBuy(){
+            if(this.IsLogged){
+                $("#exampleModal").modal("show");
+            }
+            else{
+                console.log('asd')
+                $("#exampleModal").modal("show");
+            }
+        },
+    },
+    computed: {
+        ...mapGetters(['IsLogged']),
     }
 }
 
