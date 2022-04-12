@@ -12,8 +12,7 @@
         <div>
           <button
             class="buy__btn"
-            data-toggle="modal"
-            data-target="#exampleModal"
+            @click="tryToBuy"
           >
             Перейти к оформлению
           </button>
