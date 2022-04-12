@@ -63,7 +63,7 @@
     </div>
     <div class="cassesCont">
       <div class="casesclasivNav">
-        <div class="NavGroup">
+        <div class="NavGroup NavGroupNew">
           <div
             @click="activeTab = 'New'"
             :class="[
@@ -197,6 +197,9 @@ export default {
 </script>
 
 <style scoped>
+.NavGroupNew hr{
+  width: 5vw;
+}
 .NavGroup {
   text-align: center;
   display: flex;

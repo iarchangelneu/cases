@@ -48,14 +48,14 @@
             <div style="margin-right: 3.59vw" router-link to="cases">
               <img src="../assets/img/glhf.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">GL HF</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">300 ₸</p>
             </div>
              </a>
             <a href="/cases" class="linkwithout">
             <div>
               <img src="../assets/img/hs.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">Head Shot</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">450 ₸</p>
             </div>
             </a>
           </div>
@@ -64,7 +64,7 @@
             <div style="margin-right: 3.59vw">
               <img src="../assets/img/ez.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">EZ case</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">700 ₸</p>
             </div>
              </a>
             <a href="/cases" class="linkwithout">
@@ -75,7 +75,7 @@
                 style="width: 15.63vw"
               />
               <p class="cases__desc">Весенний</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">900 ₸</p>
             </div>
             </a>
           </div>
@@ -88,7 +88,7 @@
                 style="width: 15.63vw"
               />
               <p class="cases__desc">Ультрафиолет</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">1000 ₸</p>
             </div>
             </a>
           </div>
@@ -106,14 +106,14 @@
               <div style="margin-right: 3.59vw">
               <img src="../assets/img/revo.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">REVOLVER R8</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">250 ₸</p>
             </div>
             </a>
             <a href="/shop" class="linkwithout">
             <div>
               <img src="../assets/img/de.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">DESERT EAGLE</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">275 ₸</p>
             </div>
             </a>
           </div>
@@ -122,14 +122,14 @@
             <div style="margin-right: 3.59vw">
               <img src="../assets/img/ak.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">AK-47</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">450 ₸</p>
             </div>
             </a>
             <a href="/shop" class="linkwithout">
             <div>
               <img src="../assets/img/mac.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">MAC-10</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">345 ₸</p>
             </div>
             </a>
           </div>
@@ -138,7 +138,7 @@
             <div>
               <img src="../assets/img/m4.png" alt="" style="width: 15.63vw" />
               <p class="cases__desc">M4A4</p>
-              <p class="cases__price">145 ₸</p>
+              <p class="cases__price">500 ₸</p>
             </div>
             </a>
           </div>
