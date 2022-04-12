@@ -3,7 +3,7 @@
   <router-view />
   <the-footer></the-footer>
 
-  <ops-modal v-if="IsLoggedIn">
+  <ops-modal v-if="IsLogged">
     <template #header>
       <div class="modal__header">
         <img src="./assets/img/balance.svg" alt="" style="width: 6.25vw" />
@@ -47,17 +47,19 @@
 
   <log-reg>
     <template #header>
-      <div class="logreg__main">Авторизацияя</div>
+      <div class="logreg__main">Авторизация</div>
     </template>
     <template #body>
       <div class="modal__inputs">
-        <label for="email" class="modal__label">E-mail</label><br />
+        <form>
+        <label for="login" class="modal__label">Логин</label><br />
         <input
-          type="email"
-          name="email"
-          id="email"
+          type="text"
+          name="loggin"
+          id="loggin"
           class="modal__input"
-          placeholder="Введите e-mail"
+          placeholder="Введите Логин"
+          v-model="username"
         />
 
         <label for="password" class="modal__label">Пароль</label><br />
@@ -67,11 +69,14 @@
           id="password"
           class="modal__input"
           placeholder="Введите пароль"
+          v-model="password"
         />
+        </form>
       </div>
       <div class="modal__btn">
-        <button class="modal__signin">Войти</button>
+        <button class="modal__signin" @click="login">Войти</button>
       </div>
+      
     </template>
     <template #footer>
       <div class="modal__haveacc">
@@ -103,18 +108,20 @@
           id="email"
           class="modal__input"
           placeholder="Введите e-mail"
+          v-model="emailR"
         />
 
-        <label for="password" class="modal__label">Пароль</label><br />
+        <label for="login" class="modal__label">Логин</label><br />
         <input
-          type="password"
-          name="password"
-          id="password"
+          type="text"
+          name="login"
+          id="login"
           class="modal__input"
-          placeholder="Введите пароль"
+          placeholder="Введите логин"
+          v-model="usernameR"
         />
         <label for="repeat-password" class="modal__label"
-          >Повторите пароль</label
+          >Введите пароль</label
         ><br />
         <input
           type="password"
@@ -122,13 +129,14 @@
           id="repeat-password"
           class="modal__input"
           placeholder="Введите пароль"
+          v-model="passwordR"
         />
       </div>
     </template>
     <template #footer>
       <div class="modal__haveacc">
         <div class="haveacc__btn2">
-          <button class="haveacc__button" style="margin-right: 4.9vw">
+          <button class="haveacc__button" style="margin-right: 4.9vw" @click="reg">
             Зарегистрироваться
           </button>
           <button class="haveacc__button">
@@ -212,7 +220,7 @@ export default {
   background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
   border-radius: 1.56vw;
   align-items: center;
-  color:#fff;
+  color: #fff;
   border: 0;
 }
 .haveacc__href {
@@ -239,6 +247,7 @@ export default {
   text-align: center;
 }
 .modal__inputs {
+  padding-top:50px;
   padding-left: 50px;
 }
 .modal__input {
@@ -260,7 +269,11 @@ export default {
 }
 .modal__signin {
   border: 0;
+<<<<<<< HEAD
   background: linear-gradient(235.92deg, #c62c44 14.85%, #ff0027 87.62%);
+=======
+  background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
+>>>>>>> 74f26b68a5161a9f81804f11a12886fee69a4fcb
   border-radius: 0.63vw;
   padding: 0.78vw 1.41vw 0.78vw 1.41vw;
   font-weight: 700;
