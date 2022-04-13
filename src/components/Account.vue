@@ -286,8 +286,11 @@ export default {
   border-radius: 1.46vw;
 }
 @media screen and (max-width: 480px) {
+  .input__email{
+    height: 5.79vw;
+  }
   .user {
-    padding-top: 15.27vw;
+    padding-top: 17.27vw;
   }
   .user__ava {
     width: 7.3vw !important;
