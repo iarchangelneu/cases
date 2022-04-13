@@ -23,7 +23,7 @@
            <p class="purse__count">0 ₸</p>
           <div class="dropdown-content">
             <a href="/account">Профиль</a>
-            <a @click="LogOut">Выйти</a>
+            <a @click="logOut">Выйти</a>
           </div>
         </div>
         <div class="purse">
