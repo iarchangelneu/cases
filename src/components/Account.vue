@@ -18,6 +18,7 @@
               class="user__ava"
             />
             <div class="user__name__data">
+              
               <p class="user__name">{{USER_NAME}}</p>
               <a href="#"
                 ><img
@@ -27,7 +28,7 @@
                   class="steam__ico"
               /></a>
             </div>
-            <p class="user__count">1 ₸</p>
+            <p class="user__count">0 ₸</p>
           </div>
           <button
             class="user__button"
@@ -61,17 +62,6 @@
               <p class="user__email">Пароль</p>
 
               <div class="user__flex">
-                <div>
-                  <label for="current__password" class="user__password"
-                    >Текущий пароль</label
-                  ><br />
-                  <input
-                    type="password"
-                    name="current__password"
-                    id="current__password"
-                    class="user__input all__inputs user__password"
-                  />
-                </div>
                 <div class="user__emailblock">
                   <label for="email" class="user__email">E-mail</label><br />
                   <div class="input__flex">
@@ -182,17 +172,17 @@ export default {
 }
 .all__inputs {
   width: 34.84vw;
-  height: 3.39vw;
+  height: 2.79vw;
   margin-right: 1.41vw;
 }
 .input__email {
   width: 25.84vw;
-  height: 3.39vw;
+  height: 2.79vw;
   margin-right: 1.41vw;
 }
 .user__emailblock {
-  margin-left: -0.7vw;
-  margin-top: -5.86vw;
+  margin-left: 35.3vw;
+  margin-top: -6.86vw;
 }
 .user__email {
   font-weight: 600;
@@ -200,7 +190,7 @@ export default {
   color: #fff;
 }
 .user__savebtn {
-  padding: 0.78vw 1.3vw 0.78vw 1.3vw;
+  padding: 0.48vw 1.3vw 0.48vw 1.3vw;
   background: linear-gradient(83.8deg, #c62c44 15.62%, #ff0027 91.62%);
   border-radius: 0.63vw;
   text-transform: uppercase;
@@ -226,7 +216,7 @@ export default {
 }
 .trade {
   width: 56.09vw;
-  height: 3.39vw;
+  height: 2.79vw;
   margin-right: 1.41vw;
 }
 .user__input {
@@ -286,7 +276,7 @@ export default {
   margin-right: 2.86vw;
 }
 .user {
-  padding-top: 9.27vw;
+  padding-top: 5.27vw;
 }
 .user__content {
   position: relative;
