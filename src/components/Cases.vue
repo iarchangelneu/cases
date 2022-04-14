@@ -231,19 +231,19 @@ export default {
   flex-direction: column;
 }
 .caseIm {
-  width: 70%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
 .caseName {
   font-weight: 600;
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
   color: white;
 }
 .casePrice {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 22px;
   line-height: 33px;
   text-align: center;
   color: #f5002a;
