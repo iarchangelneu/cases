@@ -191,5 +191,8 @@ export default {
   .buy__btn {
     font-size: 14px;
   }
+  .product__desc{
+    width: 28.625vw;
+  }
 }
 </style>
