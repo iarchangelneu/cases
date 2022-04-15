@@ -61,6 +61,9 @@ export default {
 </script>
 
 <style scoped>
+.product__desc{
+  width: 15.625vw;
+}
 .product__img {
   background: rgba(48, 47, 56, 0.5);
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
