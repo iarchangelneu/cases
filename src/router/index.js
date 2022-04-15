@@ -37,6 +37,16 @@ const routes = [
     name: 'terms',
     component: () => import('../views/TermsOfUse.vue')
   },
+  {
+    path: '/error',
+    name: 'error',
+    component: () => import('../views/SteamError.vue')
+  },
+  {
+    path: '/payerror',
+    name: 'payerror',
+    component: () => import('../views/PaymentErrorPage.vue')
+  },
 ]
 
 const router = createRouter({

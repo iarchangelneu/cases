@@ -49,10 +49,10 @@
                             </div>
 
                             <div class="d-flex justify-content-between" style="margin-top:2.083vw;">
-                                <button class="productModal__btn" @click="AddToCart(product)">
+                                <button class="productModal__btn" @click="addToCartModal(product)">
                                     ДОБАВИТЬ В КОРЗИНУ
                                 </button>
-                                <button class="productModal__btnM">
+                                <button class="productModal__btnM" @click="addToCartModal(product)">
                                     В КОРЗИНУ
                                 </button>
                                 <span class="productModal__price">
@@ -84,6 +84,16 @@ export default {
         ]),    
         closeProduct(){
             $('#ProductModal').modal('hide')
+        },
+        addToCartModal(product){
+            if(this.IsLogged){
+                this.AddToCart(product);
+                $('#ProductModal').modal('hide'); 
+            }
+            else{
+                $('#ProductModal').modal('hide'); 
+                $("#exampleModal").modal("show");
+            }
         }
     }
 }

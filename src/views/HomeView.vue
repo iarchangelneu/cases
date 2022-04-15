@@ -13,7 +13,7 @@
           <img src="../assets/img/20.png" alt="" style="width: 61.56vw" />
           <p class="stock__desc2">Для новых пользователей</p>
           <div class="stock__button">
-            <button class="stock__btn">Получить бонус!</button>
+            <button class="stock__btn" @click="tryToBuy">Получить бонус!</button>
           </div>
         </div>
       </div>

@@ -97,7 +97,7 @@
               class="money__input"
               placeholder="Cумма ₸"
             />
-            <button class="complete__btn">Пополнить</button>
+            <button class="complete__btn" onclick="window.location.href = 'https://realcases.kz/payerror'">Пополнить</button>
           </div>
         </div>
       </div>
