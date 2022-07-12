@@ -103,13 +103,14 @@
         <div class="modal-footer">
           <div class="money__complete">
             <input
-              type="text"
+              type="number"
               name="money"
               id="money"
               class="money__input"
               placeholder="Cумма ₸"
+              v-model="paySum"
             />
-            <button class="complete__btn" onclick="window.location.href = 'https://realcases.kz/payerror'">Вывести</button>
+            <button class="complete__btn" @click="purchase">Вывести</button>
           </div>
         </div>
       </div>
@@ -122,6 +123,7 @@ export default {
   data() {
     return {
       payment: "",
+      paySum: '',
     };
   },
   methods: {
@@ -129,6 +131,22 @@ export default {
       $("#OutputMoney").modal("hide");
       $("#Money").modal("show");
     },
+    purchase(){
+        if(this.paySum != ''){
+          axios
+          .post('https://realcases.kz/api/vision_pay/', {cost: this.paySum})
+          .then((res) => {
+              console.log(res)
+              window.location.href=res.data.url
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+        }
+        else{
+          alert('Введите сумму пополнения!')
+        }
+      },
   },
 };
 </script>

@@ -91,13 +91,17 @@
         <div class="modal-footer">
           <div class="money__complete">
             <input
-              type="text"
+              type="number"
               name="money"
               id="money"
               class="money__input"
               placeholder="Cумма ₸"
+              v-model="paySum"
             />
-            <button class="complete__btn" onclick="window.location.href = 'https://realcases.kz/payerror'">Пополнить</button>
+            <button class="complete__btn" @click="purchase">Пополнить</button>
+            <div class="instr__link__cont">
+              <a class="instr__link" href="/instruction">Инструкция по использованию карты для платежа</a>
+            </div>
           </div>
         </div>
       </div>
@@ -111,18 +115,49 @@ export default {
   data() {
     return {
       payment: "",
+      paySum: '',
     };
   },
   methods:{
       outPut() {
-      $("#Money").modal("hide");
-      $("#OutputMoney").modal("show");
-    },
+        $("#Money").modal("hide");
+        $("#OutputMoney").modal("show");
+      },
+      purchase(){
+        if(this.paySum != ''){
+          axios
+          .post('https://realcases.kz/api/vision_pay/', {cost: this.paySum})
+          .then((res) => {
+              console.log(res)
+              window.location.href=res.data.url
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+        }
+        else{
+          alert('Введите сумму пополнения!')
+        }
+      },
   }
 };
 </script>
 
 <style scpoed>
+.instr__link__cont{
+  display: flex;
+  align-items: flex-end;
+}
+.instr__link{
+    margin-left: 1.3vw;
+    font-weight: 500;
+    font-size: 1.35vw;
+    color: #fff;
+    text-decoration: underline;
+}
+.instr__link:hover{
+  color: #fff;
+}
 .complete__btn {
   background: linear-gradient(235.92deg, #753ef9 14.85%, #9d75ff 87.62%);
   border-radius: 0.26vw;

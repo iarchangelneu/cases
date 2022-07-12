@@ -47,6 +47,11 @@ const routes = [
     name: 'payerror',
     component: () => import('../views/PaymentErrorPage.vue')
   },
+  {
+    path: '/instruction',
+    name: 'instruction',
+    component: () => import('../views/InstructionPage.vue')
+  },
 ]
 
 const router = createRouter({

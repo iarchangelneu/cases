@@ -57,6 +57,10 @@
         </div>
       </div>
 
+      <div class="payImg__cont" v-if="paymentImage">
+                <img class="payImg" src="@/assets/img/payImg.png" alt="">
+            </div>
+
       <div class="footer__nav"></div>
 
       <div class="row footer__links">
@@ -69,8 +73,7 @@
       </div>
 
       <div class="adress">
-        ТОО “Нейтрон”, г.Алматы,<br />
-        площадь Республики 13
+        ТОО “Нейтрон”, г. Алматы, пр-кт Республики 13, Почтовый индекс A15X3C5 (050013), <br> +7 700 557 57 09, БИН 210840016943
       </div>
     </div>
   </section>
@@ -112,11 +115,23 @@ export default {
         Math.floor(7000 + Math.random() * (2000 - 1) + 1)
       );
     },
+    paymentImage(){
+        return this.$route.path == '/' ? true : false  
+       } 
   },
 };
 </script>
 
 <style scoped>
+
+.payImg{
+        width: 35.68vw;
+    }
+    .payImg__cont{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
 .footer__ska{
     padding-top: 7vw;
 }
