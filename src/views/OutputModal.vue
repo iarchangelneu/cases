@@ -194,10 +194,11 @@ border-radius: 1.56vw;
   padding-bottom: 1.44vw;
 }
 .mt {
-  margin-top: 2.50vw;
+  margin-top: 1.50vw;
+  margin-bottom: 0.1vw;
 }
 .money__checkbox {
-  margin-top: 2.50vw;
+  margin-top: 1.50vw;
 }
 input[type="checkbox"] {
   transform: scale(1.5);
@@ -220,7 +221,7 @@ input[type="checkbox"] {
   margin-right: 4.69vw;
   padding: 0.52vw 1.56vw 0.52vw 1.56vw;
   cursor: pointer;
-  width: 12.448vw;
+  width: 11vw;
   display: flex;
   align-items: center;
 }
@@ -249,7 +250,7 @@ input[type="checkbox"] {
 
 .system__type {
   display: flex;
-  margin-top: 2.08vw;
+  margin-top: 1.08vw;
 }
 .money__system {
   margin-top: 3.65vw;
@@ -275,7 +276,7 @@ input[type="checkbox"] {
 }
 .money__btn {
   z-index:4;
-  padding:0.99vw 0.78vw 0.99vw 0.78vw;
+  padding:0.49vw 0.78vw 0.49vw 0.78vw;
   display: flex;
   background: transparent;
   border: 0;
@@ -303,11 +304,17 @@ input[type="checkbox"] {
   display: contents;
 }
 @media screen and (max-width: 480px){
+  .money__active{
+    width: unset;
+  }
   .warning__text{
     font-size: 2.5vw !important;
   }
   .warning img{
     width:4.08vw !important;
   }
+}
+.payment__active {
+  border: 3px solid #C62C44 !important;
 }
 </style>

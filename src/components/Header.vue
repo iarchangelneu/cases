@@ -320,6 +320,7 @@ border-radius: 10px;
   }
   .dropdown-content{
     min-width: unset;
+    left: -50px;
   }
   .dropdown-content a{
     padding: 5px 5px;

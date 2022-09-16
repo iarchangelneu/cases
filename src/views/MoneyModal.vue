@@ -144,6 +144,9 @@ export default {
 </script>
 
 <style scpoed>
+.money__btn{
+  justify-content: center;
+}
 .instr__link__cont{
   display: flex;
   align-items: flex-end;
@@ -216,9 +219,9 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
 }
-.payment__active {
+/* .payment__active {
   border: 3px solid rgba(117, 62, 249, 1);
-}
+} */
 .pay_img {
   width: 100%;
 }
@@ -287,8 +290,9 @@ input[type="checkbox"] {
     font-size: 3.2vw !important;
   }
   .money__btn{
-    font-size: 2.2vw !important;
-    border: 1px solid #f7f7f7 !important;
+    font-size: 3.2vw !important;
+    /* border: 1px solid #f7f7f7 !important; */
+    align-items: center;
   }
   .money__btn img{
     width: 2.8vw !important
